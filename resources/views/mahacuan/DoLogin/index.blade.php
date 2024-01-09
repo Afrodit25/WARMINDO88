@@ -1738,11 +1738,14 @@
             location.reload();
         });
 
+
+
         function isiSaldo() {
+            let ttlSaldo = $("#ttlSaldo").val();
                 Swal.fire({
                     icon: 'info',
                     title: "Perhatian !",
-                    html: "Saldo Anda tidak cukup untuk bermain game ini.",
+                    html: "Saldo Anda Rp."+ttlSaldo+" tidak cukup untuk bermain game ini. Silahkan isi saldo",
                     timerProgressBar: true,
                     timer: 5000,
                 });

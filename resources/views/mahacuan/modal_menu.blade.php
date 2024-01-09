@@ -24,6 +24,7 @@
                             <a data-toggle="modal" data-target="#accountBalance">
                                 <span class="mr-1">IDR</span><span id="mainBalance"
                                     name="mainBalance">{{ $val->saldo_deposit }}.00</span>
+                                <input type="hidden" id="ttlSaldo" value="{{ $val->saldo_deposit }}">
                             </a>
                         </h6>
                     </div>
