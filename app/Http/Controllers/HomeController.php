@@ -54,9 +54,9 @@ class HomeController extends Controller
         return redirect()->intended('login');
     }
 
-    public function cpanel()
+    public function cpanel_login()
     {
-        //
+        return view('login');
     }
 
     public function home_superadmin()

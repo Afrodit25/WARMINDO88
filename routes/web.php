@@ -37,7 +37,7 @@ Auth::routes();
 
 
 
-Route::get('/cpanel_login', [App\Http\Controllers\HomeController::class, 'index'])->name('cpanel_login');
+Route::get('/cpanel_login', [App\Http\Controllers\HomeController::class, 'cpanel_login'])->name('cpanel_login');
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout'])->name('logout');
 
 Route::get('/Home', [App\Http\Controllers\HomeController::class, 'index'])->name('Home')->middleware('auth');
