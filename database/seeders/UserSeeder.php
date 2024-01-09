@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'id' => 1,
             'username' => 'super-admin',
             'name' => 'Super Admin',
-            'email' => 'super-admin@gmail.com',
+            'email' => 'super-admin@warmindo88.com',
             'password' => Hash::make('12345678'),
         ]);
         $super_admin->assignRole('super-admin');
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             'id' => 2,
             'username' => 'admin',
             'name' => 'Admin',
-            'email' => 'admin@gmail.com',
+            'email' => 'admin@warmindo88.com',
             'password' => Hash::make('12345678'),
         ]);
         $admin->assignRole('admin');
@@ -39,7 +39,25 @@ class UserSeeder extends Seeder
             'id' => 3,
             'username' => 'sales',
             'name' => 'Sales',
-            'email' => 'sales@gmail.com',
+            'email' => 'sales@warmindo88.com',
+            'password' => Hash::make('12345678'),
+        ]);
+        $sales->assignRole('sales');
+
+        $sales = User::create([
+            'id' => 5,
+            'username' => 'verrel',
+            'name' => 'Verrel',
+            'email' => 'verrel@warmindo88.com',
+            'password' => Hash::make('12345678'),
+        ]);
+        $sales->assignRole('sales');
+
+        $sales = User::create([
+            'id' => 6,
+            'username' => 'rizky',
+            'name' => 'Rizky',
+            'email' => 'rizky@warmindo88.com',
             'password' => Hash::make('12345678'),
         ]);
         $sales->assignRole('sales');
@@ -49,7 +67,7 @@ class UserSeeder extends Seeder
             'id' => 4,
             'username' => 'member',
             'name' => 'Member',
-            'email' => 'member@gmail.com',
+            'email' => 'member@warmindo88.com',
             'password' => Hash::make('12345678'),
         ]);
         $member->assignRole('member');
