@@ -46,7 +46,7 @@ class KaryawanSeeder extends Seeder
                 'tlp_kary'          => '-',
                 'alamat_kary'       => '-',
                 'kode_refferal'     => Str::random(5),
-                'user_id'           => 6,
+                'user_id'           => 5,
             ],
             [
                 'id'                => 4,

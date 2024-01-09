@@ -3,6 +3,7 @@
 use App\Http\Controllers\BankAccountController;
 use App\Http\Controllers\BonusController;
 use App\Http\Controllers\DepositController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\MahaCuanController;
 use App\Http\Controllers\MemberController;
@@ -38,6 +39,9 @@ Auth::routes();
 
 
 Route::get('/cpanel_login', [App\Http\Controllers\HomeController::class, 'cpanel_login'])->name('cpanel_login');
+Route::match(['get', 'post'], '/cpanel_login_proses', [HomeController::class, 'cpanel_login_proses'])->name('cpanel_login_proses');
+Route::match(['get', 'post'], '/cpanel_logout', [HomeController::class, 'cpanel_logout'])->name('cpanel_logout');
+
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout'])->name('logout');
 
 Route::get('/Home', [App\Http\Controllers\HomeController::class, 'index'])->name('Home')->middleware('auth');

@@ -14,7 +14,7 @@
                 <div class="col-md-12">
                     <div class="welcome-box">
                         <div class="welcome-img">
-                            <img alt="" src="assets/img/profiles/avatar-02.jpg">
+                            <img alt="" src="{{ asset('/') }}assets/img/people.png">
                         </div>
                         <div class="welcome-det">
                             <h3>Welcome, Sales (Kode Refferal: {{ $kode_ref }})</h3>
