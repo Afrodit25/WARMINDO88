@@ -121,7 +121,6 @@ class HomeController extends Controller
 
     public function home_member()
     {
-        // return view('dashboard.home_member');
         return redirect()->intended('apps');
     }
 

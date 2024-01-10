@@ -493,7 +493,7 @@
                                     <div class="game-item game-item-new">
                                         <a onclick="routeNav('/livegames/livegame')" href="javascript:;">
                                             <img class="logolivegame" alt="WebsiteLogo"
-                                                src={{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/logo/logo-1933674734.png>
+                                                src={{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/logo/warmindo88.png>
                                             <img title="LIVE GAME" alt="LIVE GAME"
                                                 src="https://images.linkcdn.cloud/global/game-skin1/navbar/other/lvg.webp">
                                             <div class="game-name">MAHACUAN LIVE</div>
@@ -807,7 +807,7 @@
         <div class="header-mobile__top">
             <div class="mobile-logo">
                 <a href="index.html">
-                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/logo/logo-1933674734.png"
+                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/logo/warmindo88.png"
                         alt="WebsiteLogo" width="125" height="27">
                 </a>
             </div>
@@ -840,7 +840,7 @@
                 <span>Selamat Datang</span>
             </div>
             <div class="header-logo">
-                <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/logo/logo-1933674734.png"
+                <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/logo/warmindo88.png"
                     alt="WebsiteLogo" width="180" height="39">
             </div>
             <div class="header-desc">Silakan Login atau Mendaftar</div>
@@ -849,10 +849,10 @@
             <div class="form-button">
                 <button class="btn-login sidenav-login" type="button" type="button" data-toggle="modal"
                     data-target="#loginModal">Masuk</button>
-                <button class="btn-register" onclick="window.location.href = '{{ url('mahacuan/register') }}'">Daftar</button>
+                <button class="btn-register" onclick="window.location.href = '{{ route('apps.register') }}'">Daftar</button>
             </div>
             <div class="form-forgot">
-                <a class="" href="forgot-password.html">Lupa Password?</a>
+                <a class="" href="{{ route('apps.lupa_sandi') }}">Lupa Password?</a>
             </div>
         </div>
 
@@ -1348,7 +1348,7 @@
     </div>
 
     <!-- Modal -->
-    {{-- <div class="modal fade custom-popup" id="loginModal" tabindex="-1" role="dialog"
+    <div class="modal fade custom-popup" id="loginModal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -1362,31 +1362,32 @@
 
                 <div class="modal-body">
                     <div class="modal-body-form">
-                        <form name="login-form">
+                        <form id="login-form" method="POST" action="{{ route('apps.doLogin') }}">
+                            @csrf
                             <div class="form-item">
-                                <div class="item-title">Nama Pengguna*</div>
-                                <input value="" minlength="1" maxlength="25" name="usernameLogin"
-                                    style="text-transform: lowercase" type="text" placeholder="Nama Pengguna*"
+                                <div class="item-title">Email*</div>
+                                <input minlength="1" maxlength="50" name="email"
+                                    style="text-transform: lowercase" type="email" placeholder="Email*"
                                     autocomplete="off" required>
                             </div>
                             <div class="form-item">
                                 <div class="item-title">Kata Sandi*</div>
-                                <input value="" minlength="5" maxlength="50" name="passwordLogin"
+                                <input minlength="5" maxlength="50" name="password"
                                     type="password" placeholder="Kata Sandi*" autocomplete="off" required>
                             </div>
                             <div class="form-forgot">
-                                <a href="forgot-password.html">Lupa Kata Sandi ?</a>
+                                <a href="{{ route('apps.lupa_sandi') }}">Lupa Kata Sandi ?</a>
                             </div>
                             <div class="form-button">
                                 <button name="buttonLogin" type="submit" class="button-login">Masuk</button>
-                                <span>Belum punya akun? <a href="register.html">Daftar</a></span>
+                                <span>Belum punya akun? <a href="{{ route('apps.register') }}">Daftar</a></span>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     @include('sweetalert::alert')
 
@@ -1454,5 +1455,46 @@
             nextEl: ".navigation-next--category",
             prevEl: ".navigation-prev--category",
         },
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+
+        $(document).on("submit", "#login-form", function() {
+          var e = this;
+
+          $(this).find("[type='submit']").html("Login...");
+
+          $.ajax({
+              url: $(this).attr('action'),
+              data: $(this).serialize(),
+              type: "POST",
+              dataType: 'json',
+              success: function (data) {
+
+                $(e).find("[type='submit']").html("Login");
+
+                if (data.status) {
+                    window.location = data.redirect;
+                }else{
+                    $(".alert").remove();
+                    $.each(data.errors, function (key, val) {
+                        $("#errors-list").append("<div class='alert alert-danger'>" + val + "</div>");
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: ""+val+".",
+                        });
+                    });
+
+                }
+
+              }
+          });
+
+          return false;
+      });
+
     });
 </script>

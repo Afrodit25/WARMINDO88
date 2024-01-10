@@ -1454,45 +1454,6 @@
 
 
 @section('under_body')
-<script type="text/javascript">
-    $(function () {
 
-        $(document).on("submit", "#login-form", function() {
-          var e = this;
-
-          $(this).find("[type='submit']").html("Login...");
-
-          $.ajax({
-              url: $(this).attr('action'),
-              data: $(this).serialize(),
-              type: "POST",
-              dataType: 'json',
-              success: function (data) {
-
-                $(e).find("[type='submit']").html("Login");
-
-                if (data.status) {
-                    window.location = data.redirect;
-                }else{
-                    $(".alert").remove();
-                    $.each(data.errors, function (key, val) {
-                        $("#errors-list").append("<div class='alert alert-danger'>" + val + "</div>");
-                        Swal.fire({
-                            icon: "error",
-                            title: "Oops...",
-                            text: ""+val+".",
-                        });
-                    });
-
-                }
-
-              }
-          });
-
-          return false;
-      });
-
-    });
-</script>
 
 @endsection
