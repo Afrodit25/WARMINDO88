@@ -5,7 +5,7 @@ deployment:
     # - export PUBLIC=/home/u1578665/public_html/warmindo88.tech/public
     - /bin/cp -R * $DEPLOYPATH
     - /bin/cp -a * $DEPLOYPATH
-    - /bin/cp .env.example $DEPLOYPATH
+    # - /bin/cp .env.example $DEPLOYPATH
 
     # - /bin/cp -R ./public/* $PUBLIC
     # - export DEPLOYPATH=/home/u1578665/
