@@ -21,7 +21,7 @@
     <!-- End Canonical -->
     <meta name="description" itemprop="description" content="Home" />
     <meta name="keywords" content="Home" />
-    <title>MAHACUAN: Home</title>
+    <title>WARMINDO88 - Home</title>
     <!-- Custom Tags -->
 
     <!-- End Custom Tags -->
