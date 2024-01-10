@@ -256,7 +256,7 @@
                                     <label>Bukti Pembayaran</label>
                                 </div>
                                 <div class="col-lg-5">
-                                    <input class="@error('img_bukti_payment') is-invalid @enderror" id="proof" name="img_bukti_payment" type="file">
+                                    <input class="@error('img_bukti_payment') is-invalid @enderror" id="proof" name="img_bukti_payment" type="file" required>
                                 </div>
                                 <div class="col-lg-4">
                                     <label class="formulir-desc">Hanya format *.jpg, *.jpeg,

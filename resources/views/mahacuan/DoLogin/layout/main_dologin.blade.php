@@ -2522,7 +2522,7 @@
         <div class="header-mobile__top">
             <div class="mobile-logo">
                 <a href="{{ route('apps.index') }}">
-                    <img src="https://images.linkcdn.cloud/V2/779/logo/logo-1933674734.png" alt="WebsiteLogo"
+                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/logo/warmindo88.png" alt="WebsiteLogo"
                         width="125" height="27">
                 </a>
             </div>
@@ -2563,7 +2563,7 @@
                 <span>Selamat Datang</span>
                 <span class="account-username">
                     <img src="{{ asset('/') }}template_mahacuan/themes/1/img/user-status/New Player.svg" alt="">
-                    <a href="https://mahacuan.live/profile">okesiap1</a>
+                    <a href="{{ route('apps.index') }}">okesiap1</a>
                 </span>
             </div>
         </div>
@@ -2578,14 +2578,14 @@
                         <div class="menu-title">Permainan</div>
                     </div>
                 </a>
-                <a href="https://mahacuan.live/memo">
+                <a href="{{ route('apps.memo') }}">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/memo.svg" width="60"
                             height="60">
                         <div class="menu-title">Memo<span>[0]</span></div>
                     </div>
                 </a>
-                <a href="https://mahacuan.live/profile">
+                <a href="{{ route('apps.profile') }}">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/login.svg" width="60"
                             height="60">
@@ -2601,7 +2601,7 @@
         </div>
         <div class="sidenav__menu">
             <div class="menu-list">
-                <a href="https://mahacuan.live/transaction#deposit">
+                <a href="{{ route('apps.tambah_dana') }}">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/deposit1.svg" width="60"
                             height="60">
@@ -2615,7 +2615,7 @@
                         <div class="menu-title">Klaim</div>
                     </div>
                 </a>
-                <a href="https://mahacuan.live/transaction#withdraw">
+                <a href="{{ route('apps.tarik_dana') }}">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/withdraw.svg" width="60"
                             height="60">
@@ -2674,7 +2674,7 @@
                         <div class="menu-title">Berita</div>
                     </div>
                 </a>
-                <a href="https://mahacuan.live/help">
+                <a href="{{ route('apps.help') }}">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/help.svg" width="60"
                             height="60">
@@ -2688,7 +2688,7 @@
                         <div class="menu-title">Kontak Kami</div>
                     </div>
                 </a>
-                <a href="https://mahacuan.live/feedback">
+                <a href="{{ route('apps.feedback') }}">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/feedback.svg" width="60"
                             height="60">
@@ -2699,7 +2699,7 @@
         </div>
         <div class="sidenav__menu" style="padding-top: 150px">
             <div class="menu-logout">
-                <a href="https://mahacuan.live/member/logout">
+                <a href="{{ route('logout_mahacuan') }}">
                     <div class="list-item">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/logout.svg" width="60"
                             height="60">
@@ -4109,9 +4109,9 @@
                     </div>
                 </div>
                 <div class="balance-button">
-                    <a href="https://mahacuan.live/transaction#deposit" id="depositModal" type="button"
+                    <a href="{{ route('apps.tambah_dana') }}" id="depositModal" type="button"
                         class="btn-custom">Tambah Dana</a>
-                    <a href="https://mahacuan.live/transaction#withdraw" id="withdrawModal" type="button"
+                    <a href="{{ route('apps.tarik_dana') }}" id="withdrawModal" type="button"
                         class="btn-custom">Tarik Dana</a>
                 </div>
             </div>

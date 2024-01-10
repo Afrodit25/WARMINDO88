@@ -13,7 +13,7 @@
                             <div class="popular-header">
                                 <div class="popular-title">
                                     <div class="icon">
-                                        <img src="https://mahacuan.live/themes/1/img/navigation/popular.svg" width="80">
+                                        <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/popular.svg" width="80">
                                     </div>
                                     <h6>Game Terpopuler</h6>
                                 </div>
@@ -222,7 +222,7 @@
                                     <div class="holder-header">
                                         <div class="header-title">
                                             <div class="icon">
-                                                <img src="https://mahacuan.live/themes/1/img/navigation/slot.svg"
+                                                <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/slot.svg"
                                                     width="80">
                                             </div>
                                             <h6>Slot</h6>
@@ -257,7 +257,7 @@
                                                         <a onclick="isiSaldo()" href="javascript:;">
                                                             <div class="slide-img">
                                                                 <img title="FASTSPIN" alt="FASTSPIN"
-                                                                    src="https://images.linkcdn.cloud/global/game-skin1/banner/slot/fastspin.webp">
+                                                                    src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/slot/fastspin.webp">
                                                             </div>
                                                             <div class="slide-title">FASTSPIN</div>
                                                         </a>
@@ -613,7 +613,7 @@
                                     <div class="holder-header">
                                         <div class="header-title">
                                             <div class="icon">
-                                                <img src="https://mahacuan.live/themes/1/img/navigation/sport.svg"
+                                                <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/sport.svg"
                                                     width="80">
                                             </div>
                                             <h6>Sportsbook</h6>
@@ -719,7 +719,7 @@
                                             <div class="holder-header">
                                                 <div class="header-title">
                                                     <div class="icon">
-                                                        <img src="https://mahacuan.live/themes/1/img/navigation/casino.svg"
+                                                        <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/casino.svg"
                                                             width="80">
                                                     </div>
                                                     <h6>Casino</h6>
@@ -959,7 +959,7 @@
                                             <div class="holder-header">
                                                 <div class="header-title">
                                                     <div class="icon">
-                                                        <img src="https://mahacuan.live/themes/1/img/navigation/arcade.svg"
+                                                        <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/arcade.svg"
                                                             width="80">
                                                     </div>
                                                     <h6>Arcade</h6>
@@ -1074,7 +1074,7 @@
                                     <div class="holder-header">
                                         <div class="header-title">
                                             <div class="icon">
-                                                <img src="https://mahacuan.live/themes/1/img/navigation/download-apps.svg"
+                                                <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/download-apps.svg"
                                                     width="80">
                                             </div>
                                             <h6>Download Apps</h6>
@@ -1083,12 +1083,12 @@
                                     <div class="holder-download">
                                         <div class="download-mobile">
                                             <img id="template-download"
-                                                src="https://mahacuan.live/../../custom/img/header/gameapp.png"
+                                                src="{{ asset('/') }}template_mahacuan/custom/img/header/gameapp.png"
                                                 alt="game app">
                                         </div>
                                         <div class="download-item">
                                             <a href="/download/app-9d31f8e2973dcb6969795466294bad1bb9b014d0">
-                                                <img src="https://mahacuan.live/../../custom/img/header/playstore.png"
+                                                <img src="{{ asset('/') }}template_mahacuan/custom/img/header/playstore.png"
                                                     width="130" height="39" alt="playstore">
                                             </a>
                                         </div>
@@ -1103,11 +1103,11 @@
                 <div class="container">
                     <nav class="breadcrumb-container">
                         <ul class="breadcrumb-list">
-                            <li class="breadcrumb-item" text="MAHACUAN" url="https://mahacuan.live">
-                                <a href="https://mahacuan.live" class="breadcrumb-link" target="_self">MAHACUAN</a>
+                            <li class="breadcrumb-item" text="MAHACUAN" url="{{ route('apps.index') }}">
+                                <a href="{{ route('apps.index') }}" class="breadcrumb-link" target="_self">WARMINDO88</a>
                             </li>
-                            <li class="breadcrumb-item" text="" url="https://mahacuan.live">
-                                <a href="https://mahacuan.live" class="breadcrumb-link" target="_self"></a>
+                            <li class="breadcrumb-item" text="" url="{{ route('apps.index') }}">
+                                <a href="{{ route('apps.index') }}" class="breadcrumb-link" target="_self"></a>
                             </li>
                             <li class="breadcrumb-item" text="" url="//">
                                 <a href="//" class="breadcrumb-link" target="_self"></a>
@@ -1696,7 +1696,7 @@
                             <div class="payment-border">
                                 <div class="payment-content">
                                     <div class="payment-header">
-                                        <img src="https://mahacuan.live/themes/1/img/header/support.svg" width="50"
+                                        <img src="{{ asset('/') }}template_mahacuan/themes/1/img/header/support.svg" width="50"
                                             height="50">
                                         <div class="payment-title">Bantuan &amp; Dukungan</div>
                                     </div>
@@ -2185,6 +2185,8 @@
             },
         });
     </script>
+
+
 
 
 @endsection
