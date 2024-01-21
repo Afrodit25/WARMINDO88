@@ -1362,12 +1362,12 @@
 
                 <div class="modal-body">
                     <div class="modal-body-form">
-                        <form id="login-form" method="POST" action="{{ route('apps.doLogin') }}">
+                        <form id="login-form" method="POST" action="{{ route('apps.doLoginwithUsername') }}">
                             @csrf
                             <div class="form-item">
-                                <div class="item-title">Email*</div>
-                                <input minlength="1" maxlength="50" name="email"
-                                    style="text-transform: lowercase" type="email" placeholder="Email*"
+                                <div class="item-title">Username*</div>
+                                <input minlength="1" maxlength="50" name="username"
+                                    style="text-transform: lowercase" type="text" placeholder="Username*"
                                     autocomplete="off" required>
                             </div>
                             <div class="form-item">
