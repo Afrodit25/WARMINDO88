@@ -333,8 +333,6 @@
                 },
                 amount: {
                     required: "Amount wajib diisi.",
-                    min: "Deposit tidak boleh kurang dari minimal.",
-                    max: "Deposit tidak boleh melebihi maximal."
                 },
                 notes: {
                     maxlength: "Notes maksimal berisi 32 karakter."

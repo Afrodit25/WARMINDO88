@@ -237,7 +237,7 @@
 
     {{-- //modal_login --}}
     <!-- Add LOGIN Modal -->
-        @include('mahacuan.modal_login')
+        @include('mahacuan.Login.modal_login_with_username')
     <!-- /Add LOGIN Modal -->
 
     <div class="header-nav">

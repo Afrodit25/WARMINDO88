@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'username' => 'super-admin',
             'name' => 'Super Admin',
             'email' => 'super-admin@warmindo88.tech',
-            'password' => Hash::make('12345678'),
+            'password' => Hash::make('P@ssw0rd'),
         ]);
         $super_admin->assignRole('super-admin');
 

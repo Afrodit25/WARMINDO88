@@ -111,7 +111,7 @@
                                     <th>Username</th>
                                     <th>Berita</th>
                                     <th>Nominal Deposit</th>
-                                    <th>Saldo Deposit</th>
+                                    {{-- <th>Saldo Deposit</th> --}}
                                     <th>Status Deposit</th>
                                     {{-- <th>Image</th> --}}
                                     <th>Bank Tujuan</th>
@@ -137,9 +137,7 @@
         @include('deposit.modal_UpdateStatus')
         <!-- /Update Status Deposit Modal -->
 
-        <!-- Edit Deposit Modal -->
-        {{-- @include('bonus.modal_edit') --}}
-        <!-- /Edit Deposit Modal -->
+
 
 
     </div>
@@ -182,10 +180,10 @@
                         data: 'nominal_deposit',
                         name: 'nominal_deposit'
                     },
-                    {
-                        data: 'saldo_deposit',
-                        name: 'saldo_deposit'
-                    },
+                    // {
+                    //     data: 'saldo_deposit',
+                    //     name: 'saldo_deposit'
+                    // },
                     {
                         data: 'status_deposit',
                         name: 'status_deposit'
@@ -244,26 +242,26 @@
 
         });
 
-        // function deleteData(url) {
-        //     if (confirm('Yakin ingin menghapus data terpilih?')) {
-        //         $.post(url, {
-        //                 '_token': $('[name=csrf-token]').attr('content'),
-        //                 '_method': 'delete'
-        //             })
-        //             .done((response) => {
-        //                 table.ajax.reload();
-        //                 Swal.fire(
-        //                     'has been successfully',
-        //                     'deleted data from the website!',
-        //                     'success'
-        //                 )
-        //             })
-        //             .fail((errors) => {
-        //                 alert('Tidak dapat menghapus data');
-        //                 return;
-        //             });
-        //     }
-        // }
+        function deleteData(url) {
+            if (confirm('Yakin ingin menghapus data terpilih?')) {
+                $.post(url, {
+                        '_token': $('[name=csrf-token]').attr('content'),
+                        '_method': 'delete'
+                    })
+                    .done((response) => {
+                        table.ajax.reload();
+                        Swal.fire(
+                            'has been successfully',
+                            'deleted data from the website!',
+                            'success'
+                        )
+                    })
+                    .fail((errors) => {
+                        alert('Tidak dapat menghapus data');
+                        return;
+                    });
+            }
+        }
     </script>
 
 @endsection

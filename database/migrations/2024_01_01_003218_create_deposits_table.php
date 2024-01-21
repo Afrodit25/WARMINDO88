@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('deposits', function (Blueprint $table) {
             $table->id();
             $table->string('berita_deposit');
-            $table->float('nominal_deposit');
-            $table->float('saldo_deposit');
+            $table->bigInteger('nominal_deposit');
+            $table->bigInteger('saldo_deposit');
             $table->string('status_deposit');
             $table->text('img_bukti_pembayaran');
             $table->text('remarks_deposit')->nullable();

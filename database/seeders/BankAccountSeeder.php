@@ -16,7 +16,7 @@ class BankAccountSeeder extends Seeder
         $bankAccount = [
             [
                 'id'                    => 1,
-                'nama_rekening'         => 'PRDANA',
+                'nama_rekening'         => 'BANK100',
                 'no_rekening'           => '123123123123',
                 'type_bank_accounts'    => 'Member',
                 'remarks_bank_accounts' => '-',

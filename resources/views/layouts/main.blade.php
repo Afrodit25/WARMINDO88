@@ -169,6 +169,8 @@
         @yield('content')
         <!-- /Page Wrapper -->
 
+        @include('sweetalert::alert')
+
     </div>
     <!-- /Main Wrapper -->
 

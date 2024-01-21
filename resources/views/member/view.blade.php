@@ -59,39 +59,45 @@
             <!-- /Page Header -->
 
             <!-- Search Filter -->
-            {{-- <div class="row filter-row">
-            <div class="col-sm-6 col-md-3">
-                <div class="form-group form-focus">
-                    <input type="text" class="form-control floating">
-                    <label class="focus-label">Name</label>
+            <div class="row filter-row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group form-focus">
+                        <input type="text" class="form-control floating" id="username_filter">
+                        <label class="focus-label">Username</label>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group form-focus">
+                        <input type="text" class="form-control floating" id="fullname_filter">
+                        <label class="focus-label">Full Name</label>
+                    </div>
+                </div>
+                {{-- <div class="col-sm-6 col-md-3">
+                    <div class="form-group form-focus select-focus">
+                        <select class="select floating">
+                            <option>Select Company</option>
+                            <option>Global Technologies</option>
+                            <option>Delta Infotech</option>
+                        </select>
+                        <label class="focus-label">Company</label>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group form-focus select-focus">
+                        <select class="select floating">
+                            <option>Select Roll</option>
+                            <option>Web Developer</option>
+                            <option>Web Designer</option>
+                            <option>Android Developer</option>
+                            <option>Ios Developer</option>
+                        </select>
+                        <label class="focus-label">Role</label>
+                    </div>
+                </div> --}}
+                <div class="col-sm-6 col-md-3">
+                    <a href="#" class="btn btn-success btn-block" id="btnFilter"> Search </a>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="form-group form-focus select-focus">
-                    <select class="select floating">
-                        <option>Select Company</option>
-                        <option>Global Technologies</option>
-                        <option>Delta Infotech</option>
-                    </select>
-                    <label class="focus-label">Company</label>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="form-group form-focus select-focus">
-                    <select class="select floating">
-                        <option>Select Roll</option>
-                        <option>Web Developer</option>
-                        <option>Web Designer</option>
-                        <option>Android Developer</option>
-                        <option>Ios Developer</option>
-                    </select>
-                    <label class="focus-label">Role</label>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <a href="#" class="btn btn-success btn-block"> Search </a>
-            </div>
-        </div> --}}
             <!-- /Search Filter -->
 
             <div class="row">
@@ -137,7 +143,7 @@
                                     <th>Remarks</th>
                                     <th>Created Date</th>
                                     <th>Updated Date</th>
-                                    <th>User ID</th>
+                                    {{-- <th>User ID</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -154,13 +160,17 @@
         {{-- @include('user.modal_add') --}}
         <!-- /Add USER Modal -->
 
-        <!-- Edit USER Modal -->
-        {{-- @include('user.modal_edit') --}}
-        <!-- /Edit USER Modal -->
+        <!-- Edit Member Modal -->
+        @include('member.modal_EditMember')
+        <!-- /Edit Member Modal -->
 
         <!-- Change Password Modal -->
-        {{-- @include('user.change_password') --}}
+        @include('member.modal_ChangePassword')
         <!-- /Change Password Modal -->
+
+        <!-- Edit Saldo Modal -->
+        @include('member.modal_Editsaldo')
+        <!-- /Edit Saldo Modal -->
 
 
     </div>
@@ -177,11 +187,18 @@
             // $(document).ready(function () {
 
 
-            $('#datatables').DataTable({
+            var table = $('#datatables').DataTable({
                 processing: true,
                 serverSide: true,
                 destroy: true,
-                ajax: "{{ url('/Member/json') }}",
+                ajax: {
+                    url: "{{ route('Members') }}",
+                    // type: "POST",
+                    data: function(d) {
+                        d.username_filter = $('#username_filter').val(),
+                        d.fullname_filter = $('#fullname_filter').val()
+                    }
+                },
                 columns: [{
                         data: 'action',
                         name: 'action',
@@ -233,10 +250,10 @@
                         data: 'updated_at',
                         name: 'updated_at'
                     },
-                    {
-                        data: 'user_id',
-                        name: 'user_id'
-                    },
+                    // {
+                    //     data: 'user_id',
+                    //     name: 'user_id'
+                    // },
                 ],
                 dom: 'Bfrtip',
                 lengthMenu: [
@@ -260,6 +277,10 @@
                 ],
             });
 
+
+            $('#btnFilter').on('click', function() {
+                table.ajax.reload();
+            });
 
         });
     </script>

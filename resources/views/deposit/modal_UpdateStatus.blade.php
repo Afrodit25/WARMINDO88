@@ -15,7 +15,7 @@
                     <div class="row">
                         <input type="hidden" name="saldo_sebelumnya" value="{{ $val->nominal_deposit }}">
                         <input type="hidden" name="deposit_id" value="{{ $val->id }}">
-                        <input type="text" name="member_id" value="{{ $val->member_id }}">
+                        <input type="hidden" name="member_id" value="{{ $val->member_id }}">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Status Deposit</label>

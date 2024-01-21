@@ -8,6 +8,7 @@ use App\Models\Member;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\DataTables;
 
 class DepositController extends Controller
@@ -52,17 +53,27 @@ class DepositController extends Controller
                 }
             })
             ->addColumn('action', function ($data) {
-                return '
-                <div class="dropdown dropdown-action">
-					<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#update_status' . $data->id . '"><i class="fa fa-pencil m-r-5"></i> Update Status</a>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteData' . $data->id . '"><i class="fa fa-trash m-r-5"></i> Hapus</a>
-                        </div>
-                </div>
-                ';
-                    // <a href="#" class="edit btn btn-xs btn-info btn-flat btn-sm editAsset" data-toggle="modal" data-target="#edit_employee' . $data->id . '"><i class="fa fa-pencil"></i></a>
-                    // <button type="button" onclick="deleteData(`' . route('department.delete', $data->id) . '`)" class="btn btn-xs btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                if($data->status_deposit != 'SUCCESS'){
+                    return '
+                    <div class="dropdown dropdown-action">
+                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#update_status' . $data->id . '"><i class="fa fa-pencil-square-o m-r-5"></i> Update Status</a>
+                                <a class="dropdown-item" href="#" onclick="deleteData(`' . route('Deposit.delete', $data->id) . '`)"><i class="fa fa-trash m-r-5"></i> Hapus</a>
+                            </div>
+                    </div>
+                    ';
+                }
+                else {
+                    return '
+                    <div class="dropdown dropdown-action">
+                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#update_status' . $data->id . '"><i class="fa fa-pencil-square-o m-r-5"></i> Update Status</a>
+                            </div>
+                    </div>
+                    ';
+                }
             })
             ->rawColumns(['action','status_deposit'])
             ->make(true);
@@ -70,6 +81,7 @@ class DepositController extends Controller
 
     public function UpdateStatus(Request $request, $id)
     {
+        DB::beginTransaction();
         try {
             // History Deposit
             HistoryDeposit::create([
@@ -99,6 +111,83 @@ class DepositController extends Controller
 
             DB::commit();
             return redirect('Deposit')->with(['success' => 'Data Status Deposit berhasil di Update !']);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
+    }
+
+    // public function EditSaldo(Request $request, $id)
+    // {
+    //     Alert::error('Error Title', 'Error Message');
+    //     return redirect()->back();
+
+    //     $data=DB::table('deposits')->where('member_id','=',$request->member_id)->sum('nominal_deposit');
+    //     return $data;
+
+    //     DB::beginTransaction();
+    //     try {
+    //         // History Deposit
+    //         HistoryDeposit::create([
+    //             'type'                  => 'Edit Saldo Deposit',
+    //             'saldo_sebelumnya'      => $request->saldo_sebelumnya,
+    //             'saldo_update'          => $request->saldo_sebelumnya,
+    //             'status_deposit'        => $request->status_deposit,
+    //             'website_ref'           => 'WARMINDO88',
+    //             'remarks'               => '-',
+    //             'deposit_id'            => $request->deposit_id,
+    //             'user_update'           => $userid = auth()->user()->name,
+    //         ]);
+
+    //         // Update Status Deposit
+    //         $dataDeposit = [
+    //             'nominal_deposit'      => $request->nominal_deposit,
+    //             'saldo_deposit'        => $request->saldo_deposit,
+    //         ];
+    //         Deposit::find($id)->update($dataDeposit);
+
+    //         // Update Status Deposit
+    //         $member = Member::where('id', $request->member_id)->first();
+    //         $saldo_sebelum = $member->saldo_deposit;
+    //         $dataMember = [
+    //             'saldo_deposit'        => $saldo_sebelum + $request->saldo_sebelumnya,
+    //         ];
+    //         Member::find($member->id)->update($dataMember);
+
+    //         DB::commit();
+    //         return redirect('Deposit')->with(['success' => 'Data Status Deposit berhasil di Update !']);
+    //     } catch (\Throwable $th) {
+    //         DB::rollBack();
+    //         throw $th;
+    //     }
+    // }
+
+    public function delete($id)
+    {
+        $deposit = Deposit::where('id', $id)->first();
+        DB::beginTransaction();
+        try {
+            // History Deposit
+            HistoryDeposit::create([
+                'type'                  => 'Hapus Data Deposit',
+                'saldo_sebelumnya'      => $deposit->nominal_deposit,
+                'saldo_update'          => $deposit->nominal_deposit,
+                'status_deposit'        => $deposit->status_deposit,
+                'website_ref'           => 'WARMINDO88',
+                'remarks'               => '-',
+                'deposit_id'            => $id,
+                'user_update'           => $userid = auth()->user()->name,
+            ]);
+
+            // Delete Deposit
+            $deposit = Deposit::find($id);
+            $deposit->delete();
+
+
+            DB::commit();
+            return response()->json([
+                "berhasil" => "Data Asset berhasil di Hapus !",
+            ]);
         } catch (\Throwable $th) {
             DB::rollBack();
             throw $th;

@@ -55,8 +55,11 @@ Route::match(['get', 'put'], 'User/ChangePassword/{id}', [UserController::class,
 Route::get('/Karyawan', [KaryawanController::class, 'index'])->name('Karyawans')->middleware('auth');
 Route::get('/Karyawan/json', [KaryawanController::class, 'json'])->middleware('auth');
 
-Route::get('/Member', [MemberController::class, 'index'])->name('Members')->middleware('auth');
+Route::match(['get', 'post'], '/Member', [MemberController::class, 'index'])->name('Members')->middleware('auth');
 Route::get('/Member/json', [MemberController::class, 'json'])->middleware('auth');
+Route::match(['get', 'put'], 'Member/edit_member/{id}', [MemberController::class, 'EditMember'])->name('Member.EditMember')->middleware('auth');
+Route::match(['get', 'put'], 'Member/edit_saldo/{id}', [MemberController::class, 'EditSaldo'])->name('Member.EditSaldo')->middleware('auth');
+Route::match(['get', 'put'], 'Member/change_password/{id}', [MemberController::class, 'ChangePassword'])->name('Member.ChangePassword')->middleware('auth');
 
 
 Route::get('/Bonus', [BonusController::class, 'index'])->name('Bonuses')->middleware('auth');
@@ -69,6 +72,7 @@ Route::delete('Bonus/delete/{id}', [BonusController::class, 'delete'])->name('Bo
 Route::get('/Deposit', [DepositController::class, 'index'])->name('Deposits')->middleware('auth');
 Route::get('/Deposit/json', [DepositController::class, 'json'])->middleware('auth');
 Route::match(['get', 'put'], 'Deposit/update_status/{id}', [DepositController::class, 'UpdateStatus'])->name('Deposit.UpdateStatus')->middleware('auth');
+Route::delete('Deposit/delete/{id}', [DepositController::class, 'delete'])->name('Deposit.delete')->middleware('auth');
 
 
 Route::get('/Withdraw', [WithdrawController::class, 'index'])->name('Withdraws')->middleware('auth');
@@ -83,6 +87,7 @@ Route::match(['get', 'post'], 'BankAccount/save', [BankAccountController::class,
 // WARMINDO88
 Route::get('/apps', [App\Http\Controllers\MahaCuanController::class, 'index'])->name('apps.index');
 Route::match(['get', 'post'], '/apps/doLogin', [MahaCuanController::class, 'doLogin'])->name('apps.doLogin')->middleware('guest');
+Route::match(['get', 'post'], '/apps/doLoginwithUsername', [MahaCuanController::class, 'doLoginwithUsername'])->name('apps.doLoginwithUsername')->middleware('guest');
 
 Route::get('/apps/index', [App\Http\Controllers\MahaCuanController::class, 'index_doLogin'])->name('apps.index_doLogin')->middleware('auth');
 

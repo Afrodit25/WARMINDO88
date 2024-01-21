@@ -59,6 +59,36 @@ class MahaCuanController extends Controller
         }
     }
 
+    public function doLoginwithUsername(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        if ($validator->fails()){
+            return response()->json([
+                    "status" => false,
+                    "errors" => $validator->errors()
+                ]);
+        } else {
+            if (Auth::attempt($request->only(["username", "password"]))) {
+                return response()->json([
+                    "status" => true,
+                    "redirect" => url("Home")
+                ]);
+            } else {
+
+                return response()->json([
+                    "status" => false,
+                    "errors" => ["Invalid credentials"]
+
+
+                ]);
+            }
+        }
+    }
+
     public function register()
     {
         $bank = Bank::all();
@@ -282,8 +312,8 @@ class MahaCuanController extends Controller
             return redirect('apps/tambah_dana')->with(['success' => 'Data Deposit berhasil di tambah !']);
         } catch (\Throwable $th) {
             DB::rollBack();
-            // throw $th;
-            return redirect('apps/tambah_dana')->with(['error' => 'Data Deposit gagal di tambahkan !']);
+            throw $th;
+            // return redirect('apps/tambah_dana')->with(['error' => 'Data Deposit gagal di tambahkan !']);
         }
     }
 

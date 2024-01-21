@@ -15,7 +15,7 @@ class BankAccountPemilikSeeder extends Seeder
     {
         $bankPemilik = [
             [
-                'nama_rekening_bank_account_pemilik'    => 'FJY',
+                'nama_rekening_bank_account_pemilik'    => 'BNK',
                 'no_rekening_bank_account_pemilik'      => '111111111',
                 'min_depo'                              => '20',
                 'max_depo'                              => '1000',
@@ -24,7 +24,7 @@ class BankAccountPemilikSeeder extends Seeder
                 'bank_id'                               => '1',
             ],
             [
-                'nama_rekening_bank_account_pemilik'    => 'PRD',
+                'nama_rekening_bank_account_pemilik'    => 'BNN',
                 'no_rekening_bank_account_pemilik'      => '2222222222',
                 'min_depo'                              => '20',
                 'max_depo'                              => '1000',
