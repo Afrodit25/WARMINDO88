@@ -109,7 +109,7 @@ Route::get('/apps/bonus', [App\Http\Controllers\MahaCuanController::class, 'bonu
 Route::get('/apps/memo', [App\Http\Controllers\MahaCuanController::class, 'memo'])->name('apps.memo')->middleware('auth');
 Route::get('/apps/profile', [App\Http\Controllers\MahaCuanController::class, 'profile'])->name('apps.profile')->middleware('auth');
 Route::get('/apps/feedback', [App\Http\Controllers\MahaCuanController::class, 'feedback'])->name('apps.feedback')->middleware('auth');
-Route::get('/apps/help', [App\Http\Controllers\MahaCuanController::class, 'help'])->name('apps.help')->middleware('auth');
+Route::get('/apps/help', [App\Http\Controllers\MahaCuanController::class, 'help'])->name('apps.help');
 Route::get('/logout/apps', [App\Http\Controllers\MahaCuanController::class, 'logout_mahacuan'])->name('logout_mahacuan');
 
 

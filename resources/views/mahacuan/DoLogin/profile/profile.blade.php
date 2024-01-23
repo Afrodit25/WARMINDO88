@@ -24,7 +24,7 @@
                                 <div class="col-lg-4 mb-4">
                                     <div class="profile-item">
                                         <div class="item-title">Nama Pengguna</div>
-                                        <h5>david121</h5>
+                                        <h5>{{ Auth::user()->username }}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 mb-4">
@@ -34,7 +34,7 @@
                                             <h5>NEW PLAYER</h5>
                                         </div>
                                         <div class="status-medal">
-                                            <img src="https://mahacuan.live/themes/1/img/user-status/New Player.svg"
+                                            <img src="{{ asset('/') }}template_mahacuan/themes/1/img/user-status/New Player.svg"
                                                 alt="">
                                         </div>
                                     </div>
@@ -42,13 +42,13 @@
                                 <div class="col-lg-4 mb-4">
                                     <div class="profile-item">
                                         <div class="item-title">E-mail</div>
-                                        <h5>david121@gmail.com</h5>
+                                        <h5>{{ Auth::user()->email }}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 mb-4">
                                     <div class="profile-item">
                                         <div class="item-title">Nomor Kontak</div>
-                                        <h5>+6281 2991 2883 3</h5>
+                                        <h5></h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 mb-4">

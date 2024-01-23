@@ -253,7 +253,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <div class="nav-item">
-                            <a class="nav-link" href="javascript:;" onclick="routeNav('index.html')">
+                            <a class="nav-link" href="javascript:;">
                                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/home.svg"
                                     width="80">
                                 <span class="nav-link-name">
@@ -859,7 +859,7 @@
 
         <div class="sidenav__menu">
             <div class="menu-list">
-                <a href="index.html">
+                <a href="#">
                     <div class="list-item active">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/home.svg"
                             width="60" height="60">
@@ -873,7 +873,7 @@
                         <div class="menu-title">Promosi</div>
                     </div>
                 </a>
-                <a href="download/MAHACUAN.apk">
+                <a href="#">
                     <div class="list-item">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/download-apps.svg"
                             width="60" height="60">
@@ -887,21 +887,21 @@
                         <div class="menu-title">Berita</div>
                     </div>
                 </a>
-                <a href="help.html">
+                <a href="#">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/help.svg"
                             width="60" height="60">
                         <div class="menu-title">Bantuan</div>
                     </div>
                 </a>
-                <a href="contact.html">
+                <a href="#">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/contactus.svg"
                             width="60" height="60">
                         <div class="menu-title">Kontak Kami</div>
                     </div>
                 </a>
-                <a href="event.html">
+                <a href="#">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/event.svg"
                             width="60" height="60">
@@ -1312,13 +1312,13 @@
 
 
     <div class="footer-mobile">
-        <a class="footer-item active" href="index.html">
+        <a class="footer-item active" href="#">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/home.svg" width="60">
             </div>
             <div class="footer-title">Home</div>
         </a>
-        <a class="footer-item" href="download/MAHACUAN.apk">
+        <a class="footer-item" href="#">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/download-apps.svg"
                     width="60">
@@ -1338,7 +1338,7 @@
             </div>
             <div class="footer-title">Promosi</div>
         </a>
-        <a class="footer-item" target="_blank" rel="noreferrer" href="https://direct.lc.chat/15301668/">
+        <a class="footer-item" target="_blank" rel="noreferrer" href="#">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/livechat.svg"
                     width="60">

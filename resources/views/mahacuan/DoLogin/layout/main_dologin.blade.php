@@ -2563,7 +2563,7 @@
                 <span>Selamat Datang</span>
                 <span class="account-username">
                     <img src="{{ asset('/') }}template_mahacuan/themes/1/img/user-status/New Player.svg" alt="">
-                    <a href="{{ route('apps.index') }}">okesiap1</a>
+                    <a href="{{ route('apps.index') }}">{{ Auth::user()->name }}</a>
                 </span>
             </div>
         </div>
@@ -2608,7 +2608,7 @@
                         <div class="menu-title">Deposit</div>
                     </div>
                 </a>
-                <a href="https://mahacuan.live/transaction#claim">
+                <a href="{{ route('apps.bonus') }}">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/claim-bonus.svg" width="60"
                             height="60">
@@ -2622,21 +2622,21 @@
                         <div class="menu-title">Tarik Dana</div>
                     </div>
                 </a>
-                <a name="bonusSidebar" id="promoSidebar" href="https://mahacuan.live/bonus#promo">
+                <a name="bonusSidebar" id="promoSidebar" href="{{ route('apps.bonus') }}">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/promotion.svg" width="60"
                             height="60">
                         <div class="menu-title">Promo</div>
                     </div>
                 </a>
-                <a name="bonusSidebar" id="referralSidebar" href="https://mahacuan.live/bonus#referral">
+                <a name="bonusSidebar" id="referralSidebar" href="#">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/referal.svg" width="60"
                             height="60">
                         <div class="menu-title">Refferal</div>
                     </div>
                 </a>
-                <a name="bonusSidebar" id="rebateSidebar" href="https://mahacuan.live/bonus#rebate">
+                <a name="bonusSidebar" id="rebateSidebar" href="#">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/rebate.svg" width="60"
                             height="60">
@@ -2681,7 +2681,7 @@
                         <div class="menu-title">Bantuan</div>
                     </div>
                 </a>
-                <a href="/contact">
+                <a href="#">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/contactus.svg" width="60"
                             height="60">
@@ -4447,7 +4447,7 @@
                             <h4>Permainan</h4>
                         </div>
                         <div class="category-modal-template-1">
-                            <a href="javascript:;" onclick="routeNav('/popular')">
+                            <a href="javascript:;" onclick="isiSaldo()">
                                 <div class="category-item">
                                     <div class="icon">
                                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/popular.svg"
