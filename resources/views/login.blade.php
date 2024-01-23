@@ -10,7 +10,7 @@
         <title>Login - WARMINDO88</title>
 
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}assets/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}assets/img/people.png">
 
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ asset('/') }}assets/css/bootstrap.min.css">

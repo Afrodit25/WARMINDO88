@@ -271,7 +271,7 @@
                                                         <a onclick="routeNav('/slot/pragmaticplay')" href="javascript:;">
                                                             <div class="slide-img">
                                                                 <img title="Pragmatic Play" alt="Pragmatic Play"
-                                                                    src="https://images.linkcdn.cloud/global/game-skin1/banner/slot/pra.webp">
+                                                                    src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/slot/pra.webp">
                                                             </div>
                                                             <div class="slide-title">Pragmatic Play</div>
                                                         </a>
@@ -285,7 +285,7 @@
                                                         <a onclick="routeNav('/slot/spadegaming')" href="javascript:;">
                                                             <div class="slide-img">
                                                                 <img title="Spade Gaming" alt="Spade Gaming"
-                                                                    src="https://images.linkcdn.cloud/global/game-skin1/banner/slot/spd.webp">
+                                                                    src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/slot/spd.webp">
                                                             </div>
                                                             <div class="slide-title">Spade Gaming</div>
                                                         </a>
@@ -309,7 +309,7 @@
                                                         <a onclick="routeNav('/slot/pgsoft')" href="javascript:;">
                                                             <div class="slide-img">
                                                                 <img title="PG Soft" alt="PG Soft"
-                                                                    src="https://images.linkcdn.cloud/global/game-skin1/banner/slot/pgs.webp">
+                                                                    src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/slot/pgs.webp">
                                                             </div>
                                                             <div class="slide-title">PG Soft</div>
                                                         </a>
@@ -323,7 +323,7 @@
                                                         <a onclick="routeNav('/slot/fachai')" href="javascript:;">
                                                             <div class="slide-img">
                                                                 <img title="Fa Chai" alt="Fa Chai"
-                                                                    src=" https://images.linkcdn.cloud/global/game-skin1/banner/slot/fac.webp ">
+                                                                    src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/slot/fac.webp ">
                                                             </div>
                                                             <div class="slide-title">Fa Chai</div>
                                                         </a>
@@ -337,7 +337,7 @@
                                                         <a onclick="routeNav('/slot/jili')" href="javascript:;">
                                                             <div class="slide-img">
                                                                 <img title="JILI" alt="JILI"
-                                                                    src=" https://images.linkcdn.cloud/global/game-skin1/banner/slot/jli.webp ">
+                                                                    src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/slot/jli.webp">
                                                             </div>
                                                             <div class="slide-title">JILI</div>
                                                         </a>
@@ -351,7 +351,7 @@
                                                         <a onclick="routeNav('/slot/redtiger')" href="javascript:;">
                                                             <div class="slide-img">
                                                                 <img title="RED TIGER" alt="RED TIGER"
-                                                                    src=" https://images.linkcdn.cloud/global/game-skin1/banner/slot/rtr.webp ">
+                                                                    src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/slot/rtr.webp ">
                                                             </div>
                                                             <div class="slide-title">RED TIGER</div>
                                                         </a>
