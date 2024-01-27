@@ -4413,7 +4413,7 @@
             </div>
             <div class="footer-title">Home</div>
         </a>
-        <a class="footer-item" href="https://mahacuan.live/transaction">
+        <a class="footer-item" href="{{ route('apps.tambah_dana') }}">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/deposit.svg" width="60">
             </div>
