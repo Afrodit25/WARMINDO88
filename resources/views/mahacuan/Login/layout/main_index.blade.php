@@ -864,7 +864,7 @@
                         <div class="menu-title">Home</div>
                     </div>
                 </a>
-                <a href="javascript:;" onclick="routeNav('/promotion')">
+                <a href="javascript:;">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/promo.svg"
                             width="60" height="60">
@@ -885,14 +885,14 @@
                         <div class="menu-title">Berita</div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="https://direct.lc.chat/17088249/" target="_blank">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/help.svg"
                             width="60" height="60">
                         <div class="menu-title">Bantuan</div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="https://direct.lc.chat/17088249/" target="_blank">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/contactus.svg"
                             width="60" height="60">

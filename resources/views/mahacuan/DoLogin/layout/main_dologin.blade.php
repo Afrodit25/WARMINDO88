@@ -1679,7 +1679,7 @@
             font-size: 1em
         }
     </style>
-    <script async="" type="text/javascript" src="{{ asset('/') }}template_mahacuan/themes/1/js/tracking.js"></script>
+    {{-- <script async="" type="text/javascript" src="{{ asset('/') }}template_mahacuan/themes/1/js/tracking.js"></script> --}}
 </head>
 
 <body>
@@ -2498,7 +2498,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link" href="javascript:;" onclick="routeNav('/promotion')">
+                            <a class="nav-link" href="{{ route('apps.bonus') }}">
                                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/promotion.svg" width="80">
                                 <span class="nav-link-name">
                                     Promosi
@@ -2662,7 +2662,7 @@
         </div>
         <div class="sidenav__menu">
             <div class="menu-list">
-                <a href="javascript:;" onclick="routeNav('/promotion')">
+                <a href="{{ route('apps.bonus') }}">
                     <div class="list-item  ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/promo.svg" width="60"
                             height="60">
@@ -2676,21 +2676,22 @@
                         <div class="menu-title">Berita</div>
                     </div>
                 </a>
-                <a href="{{ route('apps.help') }}">
+                {{-- <a href="{{ route('apps.help') }}"> --}}
+                <a href="https://direct.lc.chat/17088249/" target="_blank">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/help.svg" width="60"
                             height="60">
                         <div class="menu-title">Bantuan</div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="https://direct.lc.chat/17088249/" target="_blank">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/contactus.svg" width="60"
                             height="60">
                         <div class="menu-title">Kontak Kami</div>
                     </div>
                 </a>
-                <a href="{{ route('apps.feedback') }}">
+                <a href="https://direct.lc.chat/17088249/" target="_blank">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/feedback.svg" width="60"
                             height="60">
@@ -4394,7 +4395,7 @@
                 <div class="provider-nav">
                     <a href="" class="provider-link">+21</a>
                     <a href="/news" class="provider-link">Berita</a>
-                    <a href="/promotion" class="provider-link">Promosi</a>
+                    <a href="{{ route('apps.bonus') }}" class="provider-link">Promosi</a>
                     <a href="/help#About" class="provider-link">Tentang Kami</a>
                     <a href="/contact" class="provider-link">Kontak Kami</a>
                     <a href="/help" class="provider-link">Persyaratan &amp; Ketentuan</a>
@@ -4427,7 +4428,7 @@
             </div>
             <div class="footer-title">Permainan</div>
         </a>
-        <a class="footer-item " href="javascript:;" onclick="routeNav('/promotion')">
+        <a class="footer-item " href="{{ route('apps.bonus') }}">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/promo.svg" width="60">
             </div>
@@ -4543,17 +4544,6 @@
 
     <script src="{{ asset('/') }}template_mahacuan/themes/1/vendor/jquery-validate/jquery.validate.min.js"></script>
 
-    {{-- <div id="chat-widget-container"
-        style="opacity: 1; visibility: visible; z-index: 2147483639; position: fixed; bottom: 0px; width: 84px; height: 84px; max-width: 100%; max-height: calc(100% + 0px); min-height: 0px; min-width: 0px; background-color: transparent; border: 0px; overflow: hidden; right: 0px; transition: none 0s ease 0s !important;">
-        <iframe allow="autoplay; microphone *; camera *; display-capture *; picture-in-picture *; fullscreen *;"
-            src="https://secure.livechatinc.com/customer/action/open_chat?license_id=15301668&amp;group=0&amp;embedded=1&amp;widget_version=3&amp;unique_groups=0"
-            allowtransparency="true" id="chat-widget" name="chat-widget" title="LiveChat chat widget"
-            scrolling="no"
-            style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: normal; position: absolute; inset: 0px; transition: none 0s ease 0s !important; display: none; visibility: hidden;"></iframe><iframe
-            allowtransparency="true" id="chat-widget-minimized" name="chat-widget-minimized"
-            title="LiveChat chat widget" scrolling="no"
-            style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: normal; display: block;"></iframe>
-    </div> --}}
 
 
     @include('sweetalert::alert')
