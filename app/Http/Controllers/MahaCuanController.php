@@ -240,17 +240,17 @@ class MahaCuanController extends Controller
         $userid = auth()->user()->id;
         $member_id = DB::table('members')->where('user_id', $userid)->first();
 
-        $date = Carbon::today()->subDays(30);
+        // $date = Carbon::today()->subDays(30);
         $query = DB::table('deposits')
-            ->select('deposits.*')
+            // ->select('deposits.*')
             ->where('user_id', $userid)
-            ->where('created_at','>=',$date)
+            // ->where('created_at','>=',$date)
             ->orderByDesc('deposits.created_at')
             ->get();
 
-            if ($request->filled('from_date') && $request->filled('to_date')) {
-                $query = $query->whereBetween('created_at', [$request->from_date, $request->to_date]);
-            }
+            // if ($request->filled('from_date') && $request->filled('to_date')) {
+            //     $query = $query->whereBetween('created_at', [$request->from_date, $request->to_date]);
+            // }
 
         return DataTables::of($query)
             ->addColumn('tanggal', function ($data) {
