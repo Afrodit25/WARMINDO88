@@ -1755,7 +1755,7 @@
             const locale = $(this).attr('data-locale')
             $.ajax({
                 type: "POST",
-                url: "https://mahacuan.live/locale",
+                // url: "https://mahacuan.live/locale",
                 data: {
                     _token: "OqCxigToSeffu9JD3DR3P1jxI5vf5USSUwFT9cNU",
                     locale: locale,
@@ -1778,23 +1778,23 @@
     <script>
         $(document).ready(function() {
             $(this).scrollTop(0);
-            // $.ajax({
-            //     type: "POST",
-            //     url: "https://mahacuan.live/paymentService",
-            //     data: {
-            //         _token: "OqCxigToSeffu9JD3DR3P1jxI5vf5USSUwFT9cNU"
-            //     },
-            //     success: function(response) {
-            //         let wdTime = response.data.wd
-            //         let depoTime = response.data.depo
-            //         $("[id=withdrawTime]").text(wdTime)
-            //         $("[id=withdrawTimeBar]").attr('aria-valuenow', wdTime).width((wdTime / 15) * 100 +
-            //             "%")
-            //         $("[id=depositTime]").text(depoTime)
-            //         $("[id=depositTimeBar]").attr('aria-valuenow', depoTime).width((depoTime / 15) *
-            //             100 + "%")
-            //     }
-            // });
+            $.ajax({
+                type: "POST",
+                url: "#",
+                data: {
+                    _token: "OqCxigToSeffu9JD3DR3P1jxI5vf5USSUwFT9cNU"
+                },
+                success: function(response) {
+                    let wdTime = response.data.wd
+                    let depoTime = response.data.depo
+                    $("[id=withdrawTime]").text(wdTime)
+                    $("[id=withdrawTimeBar]").attr('aria-valuenow', wdTime).width((wdTime / 15) * 100 +
+                        "%")
+                    $("[id=depositTime]").text(depoTime)
+                    $("[id=depositTimeBar]").attr('aria-valuenow', depoTime).width((depoTime / 15) *
+                        100 + "%")
+                }
+            });
 
             $(".routeTo").on("click", function() {
                 const url = $(this).data("route")
@@ -1860,9 +1860,9 @@
         function routeNav(path) {
             if (path == window.location.pathname) return;
             history.pushState(null, null, path);
-            let url = "https://mahacuan.live" + window.location.pathname;
+            let url = "{{ route('apps.index') }}" + window.location.pathname;
             if (path == '/') {
-                window.location.replace("https://mahacuan.live")
+                window.location.replace("{{ route('apps.index') }}")
                 return false;
             }
             $(".header-form>a").removeClass('active')
@@ -1947,7 +1947,7 @@
             e.preventDefault()
             $.ajax({
                 type: "POST",
-                url: "https://mahacuan.live/transaction/claimVoucher",
+                url: "{{ route('apps.bonus') }}",
                 data: {
                     _token: "OqCxigToSeffu9JD3DR3P1jxI5vf5USSUwFT9cNU",
                     voucherCode: $("input[id=voucher_code]").val()
