@@ -8,6 +8,7 @@ use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\MahaCuanController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Warmindo88Controller;
 use App\Http\Controllers\WithdrawController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -113,6 +114,31 @@ Route::get('/apps/help', [App\Http\Controllers\MahaCuanController::class, 'help'
 Route::get('/logout/apps', [App\Http\Controllers\MahaCuanController::class, 'logout_mahacuan'])->name('logout_mahacuan');
 
 
+// WARMINDO88 REVISI
+// Route::get('/apps', [App\Http\Controllers\Warmindo88Controller::class, 'index'])->name('apps.index');
+// Route::match(['get', 'post'], '/apps/doLoginwithUsername', [Warmindo88Controller::class, 'doLoginwithUsername'])->name('apps.doLoginwithUsername')->middleware('guest');
 
+// Route::get('/apps/main', [App\Http\Controllers\Warmindo88Controller::class, 'main'])->name('apps.main')->middleware('auth');
+
+// Route::get('/apps/register', [App\Http\Controllers\Warmindo88Controller::class, 'register'])->name('apps.register')->middleware('guest');
+// Route::match(['get', 'post'], '/Warmindo88/checkUsername', [Warmindo88Controller::class, 'checkUsername'])->name('apps.checkUsername')->middleware('auth');
+// Route::post('/apps/register_save', [App\Http\Controllers\Warmindo88Controller::class, 'register_save'])->name('apps.register_save');
+
+// Route::get('/apps /forgot_password', [App\Http\Controllers\Warmindo88Controller::class, 'forgot_password'])->name('apps.forgot_password')->middleware('guest');
+// Route::match(['get', 'post'], '/Warmindo88/lupa_sandi_save', [Warmindo88Controller::class, 'lupa_sandi_save'])->name('apps.lupa_sandi_save');
+
+
+// Route::get('/apps/tambah_dana', [App\Http\Controllers\Warmindo88Controller::class, 'tambah_dana'])->name('apps.tambah_dana')->middleware('auth');
+// Route::match(['get', 'post'], '/Warmindo88/tambah_dana/json_tambahDana', [Warmindo88Controller::class, 'json_tambahDana'])->name('apps.json_tambahDana')->middleware('auth');
+// Route::post('/apps/deposit_save', [App\Http\Controllers\Warmindo88Controller::class, 'deposit_save'])->name('apps.deposit_save')->middleware('auth');
+
+// Route::get('/apps/tarik_dana', [App\Http\Controllers\Warmindo88Controller::class, 'tarik_dana'])->name('apps.tarik_dana')->middleware('auth');
+
+// Route::get('/apps/bonus', [App\Http\Controllers\Warmindo88Controller::class, 'bonus'])->name('apps.bonus')->middleware('auth');
+// Route::get('/apps/memo', [App\Http\Controllers\Warmindo88Controller::class, 'memo'])->name('apps.memo')->middleware('auth');
+// Route::get('/apps/profile', [App\Http\Controllers\Warmindo88Controller::class, 'profile'])->name('apps.profile')->middleware('auth');
+// Route::get('/apps/feedback', [App\Http\Controllers\Warmindo88Controller::class, 'feedback'])->name('apps.feedback')->middleware('auth');
+// Route::get('/apps/help', [App\Http\Controllers\Warmindo88Controller::class, 'help'])->name('apps.help');
+// Route::get('apps/logout', [App\Http\Controllers\Warmindo88Controller::class, 'logout_mahacuan'])->name('apps.logout');
 
 

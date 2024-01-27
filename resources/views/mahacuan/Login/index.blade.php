@@ -184,7 +184,7 @@
                 </div>
             </section>
 
-            v class="home__provider-slider">
+            <div class="home__provider-slider">
             <div class="container-fluid">
                 <div class="provider-slider__grid">
                     <div class="provider-slider__grid-item">
@@ -582,8 +582,7 @@
                                 <div class="holder-header">
                                     <div class="header-title">
                                         <div class="icon">
-                                            <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/sport.svg"
-                                                width="80">
+                                            <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/sport.svg" width="80">
                                         </div>
                                         <h6>Sportsbook</h6>
                                     </div>
@@ -1525,6 +1524,426 @@
 
 
 @section('under_body')
+
+<script>
+    window.addEventListener("popstate", (event) => {
+        location.reload();
+    });
+
+    $("a[name=locale-switch]").on("click", function () {
+        const locale = $(this).attr('data-locale')
+        $.ajax({
+            type: "POST",
+            url: "https://mahacuan.lol/locale",
+            data: {
+                _token: "H70Ji0sMr3WqwcVdM9rtYysrRizX16tAQlO7v40x",
+                locale: locale,
+            },
+            success: function (res) {
+                if (res) {
+                    location.reload()
+                } else {
+                    Swal.fire({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'error',
+                        title: "Locale not supported."
+                    });
+                }
+            }
+        });
+    });
+
+    </script><script>
+$(document).ready(function() {
+    $(this).scrollTop(0);
+    $.ajax({
+        type: "POST",
+        url: "https://mahacuan.lol/paymentService",
+        data: { _token: "H70Ji0sMr3WqwcVdM9rtYysrRizX16tAQlO7v40x"},
+        success: function (response) {
+            let wdTime = response.data.wd
+            let depoTime = response.data.depo
+            $("[id=withdrawTime]").text(wdTime)
+            $("[id=withdrawTimeBar]").attr('aria-valuenow', wdTime).width((wdTime / 15) * 100 + "%")
+            $("[id=depositTime]").text(depoTime)
+            $("[id=depositTimeBar]").attr('aria-valuenow', depoTime).width((depoTime / 15) * 100 + "%")
+        }
+    });
+
+
+                                    $('#homePopup').modal('show');
+
+                    });
+
+    $('#pageLoadingBar').hide()
+    window.onpopstate = function() {
+        let path = window.location.pathname;
+        routeNav(path);
+    }
+
+    function routeNav(path) {
+        if (path == window.location.pathname) return;
+        history.pushState(null, null, path);
+        let url = "https://mahacuan.lol" + window.location.pathname;
+        if (path == 'apps.index') {
+            window.location.replace("apps.index")
+            return false;
+        }
+        $(".header-form>a").removeClass('active')
+		let elem = document.getElementById("pageLoadingBar");
+		let width = 1;
+        $.ajax({
+            type: "GET",
+            url: url,
+			beforeSend: () => {
+				$('#pageLoadingBar').show()
+				let id = setInterval(frame, 100);
+				function frame() {
+					if (width >= 100) {
+						clearInterval(id);
+					} else {
+						width++;
+						elem.style.width = width + '%';
+					}
+				}
+			},
+            success: function (page) {
+				width = 100;
+				elem.style.width = width + '%';
+                $("main[id=main-route]").empty().append(page);
+                $("title").text($("#title-seo").text());
+                const script = $("scope-script").html()
+                $("scope-script").remove()
+                setTimeout(() => {
+                    $("html, body").animate({ scrollTop: "0" }, 1000);
+				    $('#pageLoadingBar').hide()
+				    elem.style.width = '1%';
+                    $("custom-script").empty().append(script);
+                    filterGameSelection('all')
+                }, 500);
+                let checkPath = path.split('apps.index')
+                            }
+        });
+    }
+
+</script>
+<script type="text/javascript">
+    var swiperSport = new Swiper('.sport-swiper', {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        breakpoints: {
+            1600: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            1280: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            }
+        },
+        navigation: {
+            nextEl: ".navigation-next--sport",
+            prevEl: ".navigation-prev--sport",
+        },
+    });
+    var swiperSlot = new Swiper('.slot-swiper', {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        breakpoints: {
+            1600: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            1280: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            }
+        },
+        navigation: {
+            nextEl: ".navigation-next--slot",
+            prevEl: ".navigation-prev--slot",
+        },
+    });
+    var swiperFishing = new Swiper('.fishing-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        breakpoints: {
+            1600: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            1440: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            1280: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            }
+        },
+        navigation: {
+            nextEl: ".navigation-next--fishing",
+            prevEl: ".navigation-prev--fishing",
+        },
+    });
+    var swiperCasino = new Swiper('.casino-swiper', {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        breakpoints: {
+            1920: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+            1600: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+            1280: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            }
+        },
+        navigation: {
+            nextEl: ".navigation-next--casino",
+            prevEl: ".navigation-prev--casino",
+        },
+    });
+    var swiperLottery = new Swiper('.lottery-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".navigation-next--lottery",
+            prevEl: ".navigation-prev--lottery",
+        },
+    });
+</script>
+
+<script>
+
+    function maxInputAmount(wallet) {
+        const amountWd = $("#withdrawAmount")
+		const maxWd = parseFloat(amountWd.attr('max'))
+		let walletAvail = parseFloat($(`#${wallet}Desc`).text())
+        walletAvail = isNaN(walletAvail) ? 0 : walletAvail;
+        if (walletAvail != 0) {
+            if (walletAvail < maxWd) {
+                amountWd.attr('max', walletAvail)
+            }
+        }
+    }
+
+    window.showError = (title, message) => {
+        return Swal.fire({
+            icon: 'info',
+            title: title,
+            html: message,
+            timerProgressBar: true,
+            timer: 5000,
+        });
+    }
+
+    $(".game-search>.form-control-sm").on("focus", function () {
+        if ($(this).val().length == 0) {
+            $(".game-search").width('100%');
+            $(".form-control-sm").width('100%');
+        }
+    })
+
+    $(".game-search>.form-control-sm").on("focusout", function () {
+        if ($(this).val().length == 0) {
+            $(".game-search").width('');
+            $(".form-control-sm").width('');
+        }
+    })
+
+
+    $("form[name=login-form]").on('submit', function(e) {
+        e.preventDefault();
+        let formData = {};
+        $.each($(this).serializeArray(), function (i, val) {
+             formData[val.name] = val.value
+        });
+        formData.usernameLogin = formData.usernameLogin.replace(/\s/g, '');
+        let btnTxt = $("button[name=buttonLogin]").html()
+        $.ajax({
+            url: "https://mahacuan.lol/doLogin",
+            type: 'POST',
+            data: {
+                _token: "H70Ji0sMr3WqwcVdM9rtYysrRizX16tAQlO7v40x",
+                username: formData.usernameLogin,
+                password: formData.passwordLogin
+            },
+            beforeSend: function() {
+                $("input[name='usernameLogin']").attr('readonly', true)
+                $("input[name='passwordLogin']").attr('readonly', true)
+                $("button[name=buttonLogin]").attr('disabled', true)
+                $("button[name=buttonLogin]").html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+            },
+            success: function (data) {
+                window.history.replaceState(null, null, window.location.href);
+                if (data.code == 200) {
+                    const alert = {
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'success',
+                        timer: 3000,
+                        title: data.message
+                    }
+                    localStorage.setItem("loginAlert", JSON.stringify(alert));
+                    location.reload();
+                } else {
+                    let msg = '';
+                    $.each(data.errors, function (index, valueOfElement) {
+                        msg += valueOfElement + '<br />'
+                    });
+                    Swal.fire({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'error',
+                        title: (msg == '') ? "Mohon maaf atas ketidaknyamanannya, halaman ini akan dimuat ulang dalam 5 detik" : msg
+                    });
+                    if (msg == '') {
+                        location.reload();
+                    }
+                    $("input[name='usernameLogin']").removeAttr('readonly')
+                    $("input[name='passwordLogin']").removeAttr('readonly')
+                    $("input[name='passwordLogin']").val('')
+                    $("button[name=buttonLogin]").removeAttr('disabled')
+                    $("button[name=buttonLogin]").html(btnTxt)
+                }
+            },
+            error: function (data) {
+                let msg = '';
+                $.each(data.responseJSON.errors, function (index, valueOfElement) {
+                        msg += valueOfElement + '<br />'
+                });
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'error',
+                    title: (msg == '') ? "Mohon maaf atas ketidaknyamanannya, halaman ini akan dimuat ulang dalam 5 detik" : msg
+                });
+                if (msg == '') {
+                    location.reload();
+                }
+                $("input[name='usernameLogin']").removeAttr('readonly')
+                $("input[name='passwordLogin']").removeAttr('readonly')
+                $("input[name='usernameLogin']").val('')
+                $("input[name='passwordLogin']").val('')
+                $("button[name=buttonLogin]").removeAttr('disabled')
+                $("button[name=buttonLogin]").html(btnTxt)
+            }
+        });
+    });
+
+    function gameAlert() {
+        return Swal.fire({
+            icon: 'info',
+            title: "Perhatian.",
+            html: "Silakan login untuk bermain!",
+            timerProgressBar: true,
+            timer: 5000,
+        });
+    }
+    </script>
+<!-- Start of LiveChat (www.livechat.com) code -->
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 15301668;
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="../cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechat.com/chat-with/15301668/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
+
+<custom-script>
+    <script type="text/javascript">
+        var swiper = new Swiper('.home-popular-swiper', {
+            slidesPerView: 7,
+            slidesPerColumn: 2,
+            slidesPerColumnFill: 'row',
+            direction: 'horizontal',
+            spaceBetween: 20,
+            breakpoints: {
+                1600: {
+                    slidesPerView: 7,
+                    spaceBetween: 20,
+                    slidesPerColumn: 2,
+                },
+                1280: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                    slidesPerColumn: 2,
+                }
+            },
+            autoplay: {
+                delay: 2000,
+            },
+            navigation: {
+                nextEl: ".navigation-next--popular",
+                prevEl: ".navigation-prev--popular",
+            },
+        });
+    </script>
+</custom-script>
+
+<script type="text/javascript">
+    var swiper = new Swiper('.mobile-category-swiper', {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        slidesPerGroup: 4,
+        loopFillGroupWithBlank: true,
+        navigation: {
+            nextEl: ".navigation-next--category",
+            prevEl: ".navigation-prev--category",
+        },
+    });
+</script>
+
+<script type="text/javascript">
+    $(function() {
+
+        $(document).on("submit", "#login-form", function() {
+            var e = this;
+
+            $(this).find("[type='submit']").html("Login...");
+
+            $.ajax({
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                type: "POST",
+                dataType: 'json',
+                success: function(data) {
+
+                    $(e).find("[type='submit']").html("Login");
+
+                    if (data.status) {
+                        window.location = data.redirect;
+                    } else {
+                        $(".alert").remove();
+                        $.each(data.errors, function(key, val) {
+                            $("#errors-list").append(
+                                "<div class='alert alert-danger'>" + val +
+                                "</div>");
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: "" + val + ".",
+                            });
+                        });
+
+                    }
+
+                }
+            });
+
+            return false;
+        });
+
+    });
+</script>
+
+
 
 
 @endsection

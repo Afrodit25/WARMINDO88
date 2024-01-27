@@ -14,8 +14,7 @@
     <meta name="msapplication-navbutton-color" content="#000000">
     <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
     <!-- Favicon -->
-    <link rel="icon" type="image/png"
-        href="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/favicon/favicon-1933674734.png">
+    <link rel="icon" type="image/png" href="https://images.linkcdn.cloud/V2/779/favicon/favicon-1933674734.png">
     <!-- Canonical -->
     <link rel="canonical" href="{{ route('apps.index') }}" />
     <!-- End Canonical -->
@@ -174,21 +173,20 @@
                         <span>Rupiah</span>
                     </div>
                     <div id="header-lang" class="header-flag">
-                        <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/indonesia.png"
-                            alt="id">
+                        <img src="https://images.linkcdn.cloud/global/default/icon/lang/indonesia.png" alt="id">
                         <i class="fas fa-caret-down"></i>
 
                         <div id="lang-dropdown" class="flag-dropdown">
                             <a href="javascript:;" data-locale="en" name="locale-switch">
                                 <div class="flag-item">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/english.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/english.png"
                                         alt="en">
                                     <span>English</span>
                                 </div>
                             </a>
                             <a href="javascript:;" data-locale="id" name="locale-switch">
                                 <div class="flag-item">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/indonesia.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/indonesia.png"
                                         alt="id">
                                     <span>Indonesia</span>
                                 </div>
@@ -202,28 +200,28 @@
                             </a>
                             <a href="javascript:;" data-locale="vn" name="locale-switch">
                                 <div class="flag-item">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/vietnam.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/vietnam.png"
                                         alt="vn">
                                     <span>Viet</span>
                                 </div>
                             </a>
                             <a href="javascript:;" data-locale="kh" name="locale-switch">
                                 <div class="flag-item">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/cambodia.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/cambodia.png"
                                         alt="kh">
                                     <span>Khmer</span>
                                 </div>
                             </a>
                             <a href="javascript:;" data-locale="cn" name="locale-switch">
                                 <div class="flag-item">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/chinese.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/chinese.png"
                                         alt="cn">
                                     <span>Chinese</span>
                                 </div>
                             </a>
                             <a href="javascript:;" data-locale="tl" name="locale-switch">
                                 <div class="flag-item">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/philippines.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/philippines.png"
                                         alt="tl">
                                     <span>Tagalog</span>
                                 </div>
@@ -237,7 +235,7 @@
 
     {{-- //modal_login --}}
     <!-- Add LOGIN Modal -->
-        @include('mahacuan.Login.modal_login_with_username')
+    @include('mahacuan.Login.modal_login_with_username')
     <!-- /Add LOGIN Modal -->
 
     <div class="header-nav">
@@ -350,7 +348,7 @@
                                                 src="https://images.linkcdn.cloud/global/game-skin1/navbar/slot/aisg.webp">
                                             <div class="game-name">AIS GAMING</div>
                                             <img title="AIS GAMING" alt="AIS GAMING" class="game-maintenance"
-                                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/nav-addons/maintenance_logo.png">
+                                                src="https://images.linkcdn.cloud/global/nav-addons/maintenance_logo.png">
                                         </a>
                                     </div>
                                     <div class="game-item ">
@@ -455,7 +453,7 @@
                                                 src="https://images.linkcdn.cloud/global/game-skin1/navbar/slot/pla.webp">
                                             <div class="game-name">Playtech Slot</div>
                                             <img title="Playtech Slot" alt="Playtech Slot" class="game-maintenance"
-                                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/nav-addons/maintenance_logo.png">
+                                                src="https://images.linkcdn.cloud/global/nav-addons/maintenance_logo.png">
                                         </a>
                                     </div>
                                     <div class="game-item ">
@@ -480,7 +478,7 @@
                         <div class="nav-item">
                             <a href="javascript:;" class="nav-link" onclick="routeNav('/livegames')"
                                 style="cursor: pointer;">
-                                <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/nav-addons/hot_category.png"
+                                <img src="https://images.linkcdn.cloud/global/nav-addons/hot_category.png"
                                     width="30" height="12" class="hot-tag">
                                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/livegames.svg"
                                     width="80" alt="livegames">
@@ -493,7 +491,7 @@
                                     <div class="game-item game-item-new">
                                         <a onclick="routeNav('/livegames/livegame')" href="javascript:;">
                                             <img class="logolivegame" alt="WebsiteLogo"
-                                                src={{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/logo/warmindo88.png>
+                                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/logo/warmindo88.png">
                                             <img title="LIVE GAME" alt="LIVE GAME"
                                                 src="https://images.linkcdn.cloud/global/game-skin1/navbar/other/lvg.webp">
                                             <div class="game-name">MAHACUAN LIVE</div>
@@ -806,7 +804,7 @@
     <div class="header-mobile">
         <div class="header-mobile__top">
             <div class="mobile-logo">
-                <a href="index.html">
+                <a href="{{ route('apps.index') }}">
                     <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/V2/779/logo/warmindo88.png"
                         alt="WebsiteLogo" width="125" height="27">
                 </a>
@@ -832,8 +830,7 @@
                 <div class="header-time" id="headerTime"></div>
                 <div class="flags show-popup-language" data-toggle="modal" data-target="#languageModal">
                     <span>Indonesia</span>
-                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/indonesia.png"
-                        alt="id">
+                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/indonesia.png" alt="id">
                 </div>
             </div>
             <div class="header-user">
@@ -849,7 +846,8 @@
             <div class="form-button">
                 <button class="btn-login sidenav-login" type="button" type="button" data-toggle="modal"
                     data-target="#loginModal">Masuk</button>
-                <button class="btn-register" onclick="window.location.href = '{{ route('apps.register') }}'">Daftar</button>
+                <button class="btn-register"
+                    onclick="window.location.href = '{{ route('apps.register') }}'">Daftar</button>
             </div>
             <div class="form-forgot">
                 <a class="" href="{{ route('apps.lupa_sandi') }}">Lupa Password?</a>
@@ -924,8 +922,7 @@
                 <div class="language-header">
                     <h3>Region and Language</h3>
                     <div class="header-flag">
-                        <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/indonesia.png"
-                            alt="id">
+                        <img src="https://images.linkcdn.cloud/global/default/icon/lang/indonesia.png" alt="id">
                         <h6>Indonesia</h6>
                     </div>
                 </div>
@@ -935,7 +932,7 @@
                         <a href="javascript:;" data-locale="en" name="locale-switch">
                             <div class="list-item">
                                 <div class="item-flag">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/english.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/english.png"
                                         alt="en">
                                 </div>
                                 <div class="item-content">
@@ -947,7 +944,7 @@
                         <a href="javascript:;" data-locale="id" name="locale-switch">
                             <div class="list-item">
                                 <div class="item-flag">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/indonesia.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/indonesia.png"
                                         alt="id">
                                 </div>
                                 <div class="item-content">
@@ -959,7 +956,7 @@
                         <a href="javascript:;" data-locale="th" name="locale-switch">
                             <div class="list-item">
                                 <div class="item-flag">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/thai.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/thai.png"
                                         alt="th">
                                 </div>
                                 <div class="item-content">
@@ -971,7 +968,7 @@
                         <a href="javascript:;" data-locale="vn" name="locale-switch">
                             <div class="list-item">
                                 <div class="item-flag">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/vietnam.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/vietnam.png"
                                         alt="vn">
                                 </div>
                                 <div class="item-content">
@@ -983,7 +980,7 @@
                         <a href="javascript:;" data-locale="kh" name="locale-switch">
                             <div class="list-item">
                                 <div class="item-flag">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/cambodia.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/cambodia.png"
                                         alt="kh">
                                 </div>
                                 <div class="item-content">
@@ -995,7 +992,7 @@
                         <a href="javascript:;" data-locale="cn" name="locale-switch">
                             <div class="list-item">
                                 <div class="item-flag">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/chinese.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/chinese.png"
                                         alt="cn">
                                 </div>
                                 <div class="item-content">
@@ -1007,7 +1004,7 @@
                         <a href="javascript:;" data-locale="tl" name="locale-switch">
                             <div class="list-item">
                                 <div class="item-flag">
-                                    <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/default/icon/lang/philippines.png"
+                                    <img src="https://images.linkcdn.cloud/global/default/icon/lang/philippines.png"
                                         alt="tl">
                                 </div>
                                 <div class="item-content">
@@ -1061,9 +1058,9 @@
     </script>
     <!-- Account Balance -->
 
-   <!-- Page Wrapper -->
-   @yield('content')
-   <!-- /Page Wrapper -->
+    <!-- Page Wrapper -->
+    @yield('content')
+    <!-- /Page Wrapper -->
 
     <footer class="footer">
         <div class="footer__provider">
@@ -1073,25 +1070,25 @@
                     <div class="provider-content">
                         <div class="provider-title">
                             <img title="Slot" alt="Slot"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/icon-footer/Slot.png"
-                                width="20" height="20">
+                                src="https://images.linkcdn.cloud/global/icon-footer/Slot.png" width="20"
+                                height="20">
                             <span>SLOT</span>
                         </div>
                         <div class="provider-logo">
                             <img alt="FASTSPIN" title="FASTSPIN"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/fastspin_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/fastspin_footer.png"
                                 width="100" height="50">
                             <img alt="Pragmatic Play" title="Pragmatic Play"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/plc_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/plc_footer.png"
                                 width="100" height="50">
                             <img alt="Spade Gaming" title="Spade Gaming"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/spd_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/spd_footer.png"
                                 width="100" height="50">
                             <img alt="N2Live Slot" title="N2Live Slot"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/nli_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/nli_footer.png"
                                 width="100" height="50">
                             <img alt="PG Soft" title="PG Soft"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/pgs_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/pgs_footer.png"
                                 width="100" height="50">
                             <img alt="Fa Chai" title="Fa Chai"
                                 src="https://images.linkcdn.cloud/global/logo-footer/slot/fac_footer.webp"
@@ -1103,63 +1100,63 @@
                                 src="https://images.linkcdn.cloud/global/logo-footer/slot/rtr_footer.webp"
                                 width="100" height="50">
                             <img alt="Afb Gaming" title="Afb Gaming"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/afg_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/afg_footer.png"
                                 width="100" height="50">
                             <img alt="AIS GAMING" title="AIS GAMING"
                                 src="https://images.linkcdn.cloud/global/logo-footer/slot/aisg_footer.webp"
                                 width="100" height="50">
                             <img alt="HC Game" title="HC Game"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/hcg_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/hcg_footer.png"
                                 width="100" height="50">
                             <img alt="Advantplay" title="Advantplay"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/adv_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/adv_footer.png"
                                 width="100" height="50">
                             <img alt="JDB" title="JDB"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/jdb_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/jdb_footer.png"
                                 width="100" height="50">
                             <img alt="NoLimit City" title="NoLimit City"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/nlc_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/nlc_footer.png"
                                 width="100" height="50">
                             <img alt="Playstar" title="Playstar"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/pls_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/pls_footer.png"
                                 width="100" height="50">
                             <img alt="Joker Gaming" title="Joker Gaming"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/jok_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/jok_footer.png"
                                 width="100" height="50">
                             <img alt="Habanero" title="Habanero"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/hbn_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/hbn_footer.png"
                                 width="100" height="50">
                             <img alt="CQ9 Gaming" title="CQ9 Gaming"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/cq9_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/cq9_footer.png"
                                 width="100" height="50">
                             <img alt="Virtual Tech" title="Virtual Tech"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/vrt_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/vrt_footer.png"
                                 width="100" height="50">
                             <img alt="Ameba" title="Ameba"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/amb_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/amb_footer.png"
                                 width="100" height="50">
                             <img alt="Top Trend Gaming" title="Top Trend Gaming"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/ttg_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/ttg_footer.png"
                                 width="100" height="50">
                             <img alt="Microgaming" title="Microgaming"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/micro_logo.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/micro_logo.png"
                                 width="100" height="50">
                             <img alt="Playtech Slot" title="Playtech Slot"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/pla_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/pla_footer.png"
                                 width="100" height="50">
                             <img alt="Play N Go" title="Play N Go"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/png_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/png_footer.png"
                                 width="100" height="50">
                             <img alt="Hydako" title="Hydako"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/hyd_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/slot/hyd_footer.png"
                                 width="100" height="50">
                         </div>
                     </div>
                     <div class="provider-content">
                         <div class="provider-title">
                             <img title="Casino" alt="Casino"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/icon-footer/Casino.png"
-                                width="20" height="20">
+                                src="https://images.linkcdn.cloud/global/icon-footer/Casino.png" width="20"
+                                height="20">
                             <span>CASINO</span>
                         </div>
                         <div class="provider-logo">
@@ -1167,40 +1164,40 @@
                                 src="https://images.linkcdn.cloud/global/logo-footer/casino/afc_footer.webp"
                                 width="100" height="50">
                             <img alt="Pragmatic Play LC" title="Pragmatic Play LC"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/plc_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/plc_footer.png"
                                 width="100" height="50">
                             <img alt="WE CASINO" title="WE CASINO"
                                 src="https://images.linkcdn.cloud/global/logo-footer/casino/wec_footer.webp"
                                 width="100" height="50">
                             <img alt="GD88" title="GD88"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/gd8_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/gd8_footer.png"
                                 width="100" height="50">
                             <img alt="WM Casino" title="WM Casino"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/wmc_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/wmc_footer.png"
                                 width="100" height="50">
                             <img alt="OG Casino" title="OG Casino"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/ogs_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/ogs_footer.png"
                                 width="100" height="50">
                             <img alt="Evolution" title="Evolution"
                                 src="https://images.linkcdn.cloud/global/logo-footer/casino/evolution_footer.webp"
                                 width="100" height="50">
                             <img alt="ALLBET" title="ALLBET"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/alb_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/alb_footer.png"
                                 width="100" height="50">
                             <img alt="Dream Gaming" title="Dream Gaming"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/drg_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/drg_footer.png"
                                 width="100" height="50">
                             <img alt="Asia Gaming" title="Asia Gaming"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/agc_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/agc_footer.png"
                                 width="100" height="50">
                             <img alt="Sexy Gaming" title="Sexy Gaming"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/seg_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/seg_footer.png"
                                 width="100" height="50">
                             <img alt="LG88" title="LG88"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/lg8_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/lg8_footer.png"
                                 width="100" height="50">
                             <img alt="N2Live" title="N2Live"
-                                src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/casino/nli_footer.png"
+                                src="https://images.linkcdn.cloud/global/logo-footer/casino/nli_footer.png"
                                 width="100" height="50">
                         </div>
                     </div>
@@ -1209,29 +1206,29 @@
                             <div class="col-lg-6">
                                 <div class="provider-title">
                                     <img title="Sportsbook" alt="Sportsbook"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/icon-footer/Sport.png"
+                                        src="https://images.linkcdn.cloud/global/icon-footer/Sport.png"
                                         width="20" height="20">
                                     <span>SPORTSBOOK</span>
                                 </div>
                                 <div class="provider-logo">
                                     <img alt="AFB88" title="AFB88"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/sports/afb_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/sports/afb_footer.png"
                                         width="100" height="50">
                                     <img alt="IA E-SPORT" title="IA E-SPORT"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/sports/iae_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/sports/iae_footer.png"
                                         width="100" height="50">
                                     <img alt="SBO SPORT" title="SBO SPORT"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/sports/sbo_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/sports/sbo_footer.png"
                                         width="100" height="50">
                                     <img alt="CMD368" title="CMD368"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/sports/cmd_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/sports/cmd_footer.png"
                                         width="100" height="50">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="provider-title">
                                     <img title="Arcade" alt="Arcade"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/icon-footer/Arcade.png"
+                                        src="https://images.linkcdn.cloud/global/icon-footer/Arcade.png"
                                         width="20" height="20">
                                     <span>ARCADE</span>
                                 </div>
@@ -1240,16 +1237,16 @@
                                         src="https://images.linkcdn.cloud/global/logo-footer/casino/spaceman_footer.webp"
                                         width="100" height="50">
                                     <img alt="Joker Gaming" title="Joker Gaming"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/jok_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/slot/jok_footer.png"
                                         width="100" height="50">
                                     <img alt="Spade Gaming" title="Spade Gaming"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/spd_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/slot/spd_footer.png"
                                         width="100" height="50">
                                     <img alt="Playstar" title="Playstar"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/pls_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/slot/pls_footer.png"
                                         width="100" height="50">
                                     <img alt="CQ9" title="CQ9"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/slot/cq9_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/slot/cq9_footer.png"
                                         width="100" height="50">
                                 </div>
                             </div>
@@ -1260,35 +1257,35 @@
                             <div class="col-lg-3">
                                 <div class="provider-title">
                                     <img title="Live Game" alt="Live Game"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/icon-footer/Game%20Lain.png"
+                                        src="https://images.linkcdn.cloud/global/icon-footer/Game%20Lain.png"
                                         width="20" height="20">
                                     <span>LIVE GAME</span>
                                 </div>
                                 <div class="provider-logo">
                                     <img alt="LIVE GAME" title="LIVE GAME"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/others/lvg_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/others/lvg_footer.png"
                                         width="100" height="50">
                                     <img alt="WS168" title="WS168"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/others/ws1_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/others/ws1_footer.png"
                                         width="100" height="50">
                                     <img alt="MIKI Gaming" title="MIKI Gaming"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/others/miki_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/others/miki_footer.png"
                                         width="100" height="50">
                                     <img alt="SV388 Cockfight" title="SV388 Cockfight"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/others/sv3_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/others/sv3_footer.png"
                                         width="100" height="50">
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="provider-title">
                                     <img title="Lottery" alt="Lottery"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/icon-footer/Lottery.png"
+                                        src="https://images.linkcdn.cloud/global/icon-footer/Lottery.png"
                                         width="20" height="20">
                                     <span>LOTTERY</span>
                                 </div>
                                 <div class="provider-logo">
                                     <img alt="4D" title="4D"
-                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/logo-footer/lottery/tog_footer.png"
+                                        src="https://images.linkcdn.cloud/global/logo-footer/lottery/tog_footer.png"
                                         width="100" height="50">
                                 </div>
                             </div>
@@ -1372,8 +1369,8 @@
                             </div>
                             <div class="form-item">
                                 <div class="item-title">Kata Sandi*</div>
-                                <input minlength="5" maxlength="50" name="password"
-                                    type="password" placeholder="Kata Sandi*" autocomplete="off" required>
+                                <input minlength="5" maxlength="50" name="password" type="password"
+                                    placeholder="Kata Sandi*" autocomplete="off" required>
                             </div>
                             <div class="form-forgot">
                                 <a href="{{ route('apps.lupa_sandi') }}">Lupa Kata Sandi ?</a>
@@ -1403,98 +1400,26 @@
             target="_blank">LiveChat</a></noscript>
     <!-- End of LiveChat code -->
 
+    <div id="chat-widget-container"
+    style="opacity: 1; visibility: visible; z-index: 2147483639; position: fixed; bottom: 0px; width: 392px; height: 714px; max-width: 100%; max-height: calc(100% + 0px); min-height: 0px; min-width: 0px; background-color: transparent; border: 0px; overflow: hidden; right: 0px; transition: none 0s ease 0s !important;">
+    <iframe
+        allow="clipboard-read; clipboard-write; autoplay; microphone *; camera *; display-capture *; picture-in-picture *; fullscreen *;"
+        src="https://secure.livechatinc.com/customer/action/open_chat?license_id=15301668&amp;group=0&amp;embedded=1&amp;widget_version=3&amp;unique_groups=0"
+        allowtransparency="true" id="chat-widget" name="chat-widget" title="LiveChat chat widget"
+        scrolling="no"
+        style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: normal; position: absolute; inset: 0px; transition: none 0s ease 0s !important; display: block; visibility: visible;"></iframe><iframe
+        allowtransparency="true" id="chat-widget-minimized" name="chat-widget-minimized"
+        title="LiveChat chat widget" scrolling="no"
+        style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: normal; display: none;"></iframe>
+</div>
 
 
 
+    @yield('under_body')
 
 </body>
 
 <!-- Mirrored from mahacuan.live/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 25 Dec 2023 16:36:57 GMT -->
-@yield('under_body')
 
 </html>
 
-<custom-script>
-    <script type="text/javascript">
-        var swiper = new Swiper('.home-popular-swiper', {
-            slidesPerView: 7,
-            slidesPerColumn: 2,
-            slidesPerColumnFill: 'row',
-            direction: 'horizontal',
-            spaceBetween: 20,
-            breakpoints: {
-                1600: {
-                    slidesPerView: 7,
-                    spaceBetween: 20,
-                    slidesPerColumn: 2,
-                },
-                1280: {
-                    slidesPerView: 5,
-                    spaceBetween: 20,
-                    slidesPerColumn: 2,
-                }
-            },
-            autoplay: {
-                delay: 2000,
-            },
-            navigation: {
-                nextEl: ".navigation-next--popular",
-                prevEl: ".navigation-prev--popular",
-            },
-        });
-    </script>
-</custom-script>
-
-<script type="text/javascript">
-    var swiper = new Swiper('.mobile-category-swiper', {
-        slidesPerView: 4,
-        spaceBetween: 10,
-        slidesPerGroup: 4,
-        loopFillGroupWithBlank: true,
-        navigation: {
-            nextEl: ".navigation-next--category",
-            prevEl: ".navigation-prev--category",
-        },
-    });
-</script>
-
-<script type="text/javascript">
-    $(function () {
-
-        $(document).on("submit", "#login-form", function() {
-          var e = this;
-
-          $(this).find("[type='submit']").html("Login...");
-
-          $.ajax({
-              url: $(this).attr('action'),
-              data: $(this).serialize(),
-              type: "POST",
-              dataType: 'json',
-              success: function (data) {
-
-                $(e).find("[type='submit']").html("Login");
-
-                if (data.status) {
-                    window.location = data.redirect;
-                }else{
-                    $(".alert").remove();
-                    $.each(data.errors, function (key, val) {
-                        $("#errors-list").append("<div class='alert alert-danger'>" + val + "</div>");
-                        Swal.fire({
-                            icon: "error",
-                            title: "Oops...",
-                            text: ""+val+".",
-                        });
-                    });
-
-                }
-
-              }
-          });
-
-          return false;
-      });
-
-    });
-</script>
