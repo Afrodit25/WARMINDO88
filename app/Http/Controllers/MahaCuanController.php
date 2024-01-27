@@ -68,24 +68,27 @@ class MahaCuanController extends Controller
         ]);
 
         if ($validator->fails()){
-            return response()->json([
-                    "status" => false,
-                    "errors" => $validator->errors()
-                ]);
+            Alert::error('Error Title', 'Error Message');
+            return redirect()->back();
+            // return response()->json([
+            //         "status" => false,
+            //         "errors" => $validator->errors()
+            //     ]);
         } else {
             if (Auth::attempt($request->only(["username", "password"]))) {
-                return response()->json([
-                    "status" => true,
-                    "redirect" => url("Home")
-                ]);
+                Alert::success('Success', 'Berhasil Login !!!');
+                return redirect('Home');
+                    // return response()->json([
+                    //     "status" => true,
+                    //     "redirect" => url("Home")
+                    // ]);
             } else {
-
-                return response()->json([
-                    "status" => false,
-                    "errors" => ["Invalid credentials"]
-
-
-                ]);
+                Alert::error('Error', 'Invalid credentials');
+                return redirect()->back();
+                // return response()->json([
+                //     "status" => false,
+                //     "errors" => ["Invalid credentials"]
+                // ]);
             }
         }
     }
@@ -165,22 +168,24 @@ class MahaCuanController extends Controller
         return view('mahacuan.Login.forgot_password');
     }
 
-    // public function lupa_sandi_save(Request $request)
-    // {
-    //     try {
-    //         // Change Password User
-    //         $user = User::find($id);
-    //         $user->update([
-    //             'password' => Hash::make($request->password),
-    //         ]);
+    public function lupa_sandi_save(Request $request)
+    {
+        try {
+            // Change Password User
+            // $user = User::find($id);
+            // $user->update([
+            //     'password' => Hash::make($request->password),
+            // ]);
 
-    //         DB::commit();
-    //         return redirect('Users')->with(['success' => 'Password Updated Successfully !']);
-    //     } catch (\Throwable $th) {
-    //         DB::rollBack();
-    //         throw $th;
-    //     }
-    // }
+            // DB::commit();
+            // return redirect('Users')->with(['success' => 'Password Updated Successfully !']);
+            Alert::info('Info Title', 'Maaf, sedang Maintenance');
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
+    }
 
     public function index_doLogin()
     {

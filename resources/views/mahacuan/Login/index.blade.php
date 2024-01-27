@@ -1554,7 +1554,9 @@
         });
     });
 
-    </script><script>
+    </script>
+
+    <script>
 $(document).ready(function() {
     $(this).scrollTop(0);
     $.ajax({
@@ -1847,14 +1849,28 @@ $(document).ready(function() {
         });
     }
     </script>
-<!-- Start of LiveChat (www.livechat.com) code -->
-<script>
-    window.__lc = window.__lc || {};
-    window.__lc.license = 15301668;
-    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="../cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
-</script>
-<noscript><a href="https://www.livechat.com/chat-with/15301668/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
-<!-- End of LiveChat code -->
+
+    <!-- Start of LiveChat (www.livechatinc.com) code -->
+    <script type="text/javascript">
+        window._lc = window._lc || {};
+        window.__lc.license = 17088249;
+        ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)};
+        var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){
+        i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},
+        get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");
+        return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){
+        var n=t.createElement("script");
+        n.async=!0,n.type="text/javascript",
+        n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};
+        !n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+    </script>
+    <noscript>
+    <a href="https://www.livechatinc.com/chat-with/17088249/" rel="nofollow">Chat with us</a>,
+    powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+    </noscript>
+    <!-- End of LiveChat code -->
+
+
 
 <custom-script>
     <script type="text/javascript">
@@ -1903,47 +1919,48 @@ $(document).ready(function() {
 <script type="text/javascript">
     $(function() {
 
-        $(document).on("submit", "#login-form", function() {
-            var e = this;
+        // $(document).on("submit", "#login-form", function() {
+        //     var e = this;
 
-            $(this).find("[type='submit']").html("Login...");
+        //     $(this).find("[type='submit']").html("Login...");
 
-            $.ajax({
-                url: $(this).attr('action'),
-                data: $(this).serialize(),
-                type: "POST",
-                dataType: 'json',
-                success: function(data) {
+        //     $.ajax({
+        //         url: $(this).attr('action'),
+        //         data: $(this).serialize(),
+        //         type: "POST",
+        //         dataType: 'json',
+        //         success: function(data) {
 
-                    $(e).find("[type='submit']").html("Login");
+        //             $(e).find("[type='submit']").html("Login");
 
-                    if (data.status) {
-                        window.location = data.redirect;
-                        Swal.fire({
-                            title: "Good job!",
-                            text: "Anda Berhasil Login !",
-                            icon: "success"
-                        });
-                    } else {
-                        $(".alert").remove();
-                        $.each(data.errors, function(key, val) {
-                            $("#errors-list").append(
-                                "<div class='alert alert-danger'>" + val +
-                                "</div>");
-                            Swal.fire({
-                                icon: "error",
-                                title: "Oops...",
-                                text: "" + val + ".",
-                            });
-                        });
+        //             if (data.status) {
+        //                 window.location = data.redirect;
+        //                 Swal.fire({
+        //                     title: "Good job!",
+        //                     text: "Anda Berhasil Login !",
+        //                     icon: "success"
+        //                 });
+        //             } else {
+        //                 $(".alert").remove();
+        //                 $.each(data.errors, function(key, val) {
+        //                     $("#errors-list").append(
+        //                         "<div class='alert alert-danger'>" + val +
+        //                         "</div>");
+        //                     Swal.fire({
+        //                         icon: "error",
+        //                         title: "Oops...",
+        //                         text: "" + val + ".",
+        //                     });
+        //                 });
 
-                    }
+        //             }
 
-                }
-            });
+        //         }
+        //     });
 
-            return false;
-        });
+        //     return false;
+        // });
+
 
     });
 </script>

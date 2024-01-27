@@ -956,8 +956,8 @@
             <div class="container">
                 <div class="forgot-password__container">
                     <div class="page-header">Lupa Password</div>
-                    <form id="forgot-form" action="https://mahacuan.live/forgot-password" method="POST">
-                        <input type="hidden" name="_token" value="kmWiRvJviIuiw5KF4aVRUaOkyX5vhc7kzqyqN7yL">
+                    <form id="forgot-form" action="{{ route('apps.lupa_sandi_save') }}" method="POST">
+                        @csrf
                         <div class="password-form">
                             <div class="row">
                                 <div class="col-lg-6">

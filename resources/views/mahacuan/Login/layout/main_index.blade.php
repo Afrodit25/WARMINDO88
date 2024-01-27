@@ -36,7 +36,7 @@
     <link rel="stylesheet" id="templateStyle" type="text/css"
         href="{{ asset('/') }}template_mahacuan/custom/css/style.css">
     <link rel="stylesheet" type="text/css"
-        href="{{ asset('/') }}template_mahacuan/themes/1/sass/custom65a9.css?v=2.0.1511">
+        href="{{ asset('/') }}template_mahacuan/themes/1/sass/custom65a9.css">
 </head>
 
 <body>
@@ -1335,7 +1335,7 @@
             </div>
             <div class="footer-title">Promosi</div>
         </a>
-        <a class="footer-item" target="_blank" rel="noreferrer" href="#">
+        <a class="footer-item" target="_blank" rel="noreferrer" href="https://direct.lc.chat/17088249/">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/livechat.svg"
                     width="60">
@@ -1354,7 +1354,7 @@
                 </button>
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Formulir Login</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Formulir Login Mobile</h5>
                 </div>
 
                 <div class="modal-body">
@@ -1395,32 +1395,16 @@
     <script src="{{ asset('/') }}template_mahacuan/themes/1/js/index65a9.js"></script>
     <script src="{{ asset('/') }}template_mahacuan/themes/1/vendor/jquery-validate/jquery.validate.min.js"></script>
 
-    <noscript><a href="https://www.livechat.com/chat-with/15301668/" rel="nofollow">Chat with us</a>, powered by <a
-            href="https://www.livechat.com/?welcome" rel="noopener nofollow"
-            target="_blank">LiveChat</a></noscript>
-    <!-- End of LiveChat code -->
-
-    {{-- <div id="chat-widget-container"
-    style="opacity: 1; visibility: visible; z-index: 2147483639; position: fixed; bottom: 0px; width: 392px; height: 714px; max-width: 100%; max-height: calc(100% + 0px); min-height: 0px; min-width: 0px; background-color: transparent; border: 0px; overflow: hidden; right: 0px; transition: none 0s ease 0s !important;">
-    <iframe
-        allow="clipboard-read; clipboard-write; autoplay; microphone *; camera *; display-capture *; picture-in-picture *; fullscreen *;"
-        src="https://secure.livechatinc.com/customer/action/open_chat?license_id=15301668&amp;group=0&amp;embedded=1&amp;widget_version=3&amp;unique_groups=0"
-        allowtransparency="true" id="chat-widget" name="chat-widget" title="LiveChat chat widget"
-        scrolling="no"
-        style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: normal; position: absolute; inset: 0px; transition: none 0s ease 0s !important; display: block; visibility: visible;"></iframe><iframe
-        allowtransparency="true" id="chat-widget-minimized" name="chat-widget-minimized"
-        title="LiveChat chat widget" scrolling="no"
-        style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: normal; display: none;"></iframe>
-</div> --}}
 
 
-@yield('under_body')
+
+    @yield('under_body')
 
 
 </body>
 
 
-<!-- Mirrored from mahacuan.live/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 25 Dec 2023 16:36:57 GMT -->
+
 
 </html>
 
