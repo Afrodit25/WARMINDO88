@@ -1919,6 +1919,11 @@ $(document).ready(function() {
 
                     if (data.status) {
                         window.location = data.redirect;
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "Anda Berhasil Login !",
+                            icon: "success"
+                        });
                     } else {
                         $(".alert").remove();
                         $.each(data.errors, function(key, val) {

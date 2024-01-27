@@ -1345,7 +1345,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade custom-popup" id="loginModal" tabindex="-1" role="dialog"
+    <div class="modal fade custom-popup" id="loginModal" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -1400,7 +1400,7 @@
             target="_blank">LiveChat</a></noscript>
     <!-- End of LiveChat code -->
 
-    <div id="chat-widget-container"
+    {{-- <div id="chat-widget-container"
     style="opacity: 1; visibility: visible; z-index: 2147483639; position: fixed; bottom: 0px; width: 392px; height: 714px; max-width: 100%; max-height: calc(100% + 0px); min-height: 0px; min-width: 0px; background-color: transparent; border: 0px; overflow: hidden; right: 0px; transition: none 0s ease 0s !important;">
     <iframe
         allow="clipboard-read; clipboard-write; autoplay; microphone *; camera *; display-capture *; picture-in-picture *; fullscreen *;"
@@ -1411,13 +1411,14 @@
         allowtransparency="true" id="chat-widget-minimized" name="chat-widget-minimized"
         title="LiveChat chat widget" scrolling="no"
         style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: normal; display: none;"></iframe>
-</div>
+</div> --}}
 
 
+@yield('under_body')
 
-    @yield('under_body')
 
 </body>
+
 
 <!-- Mirrored from mahacuan.live/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 25 Dec 2023 16:36:57 GMT -->
 
