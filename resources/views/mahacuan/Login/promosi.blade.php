@@ -8,8 +8,8 @@
         <div class="container">
             <nav class="breadcrumb-container">
                 <ul class="breadcrumb-list">
-                    <li class="breadcrumb-item" text="MAHACUAN" url="{{ route('apps.index') }}">
-                        <a href="{{ route('apps.index') }}" class="breadcrumb-link" target="_self">MAHACUAN</a>
+                    <li class="breadcrumb-item" text="WARMINDO88" url="{{ route('apps.index') }}">
+                        <a href="{{ route('apps.index') }}" class="breadcrumb-link" target="_self">WARMINDO88</a>
                     </li>
                     <li class="breadcrumb-item" text="Promotion" url="{{ route('apps.promo') }}">
                         <a href="{{ route('apps.promo') }}" class="breadcrumb-link" target="_self">Promotion</a>

@@ -251,7 +251,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <div class="nav-item">
-                            <a class="nav-link" href="javascript:;">
+                            <a class="nav-link" href="{{ route('apps.index') }}">
                                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/home.svg"
                                     width="80">
                                 <span class="nav-link-name">
@@ -871,7 +871,7 @@
                         <div class="menu-title">Promosi</div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="{{ route('apps.index') }}">
                     <div class="list-item">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/download-apps.svg"
                             width="60" height="60">
@@ -1309,13 +1309,13 @@
 
 
     <div class="footer-mobile">
-        <a class="footer-item active" href="#">
+        <a class="footer-item active" href="{{ route('apps.index') }}">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/home.svg" width="60">
             </div>
             <div class="footer-title">Home</div>
         </a>
-        <a class="footer-item" href="#">
+        <a class="footer-item" href="{{ route('apps.index') }}">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/download-apps.svg"
                     width="60">
@@ -1329,7 +1329,7 @@
             </div>
             <div class="footer-title">Masuk</div>
         </a>
-        <a class="footer-item " href="{{ route('apps.promo') }}">
+        <a class="footer-item" href="{{ route('apps.promo') }}">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/promo.svg" width="60">
             </div>
@@ -1354,7 +1354,7 @@
                 </button>
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Formulir Login Mobile</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Formulir Login</h5>
                 </div>
 
                 <div class="modal-body">
