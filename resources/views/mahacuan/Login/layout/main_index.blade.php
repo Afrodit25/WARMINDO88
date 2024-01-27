@@ -779,7 +779,7 @@
                             </a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link" href="javascript:;" onclick="routeNav('/promotion')">
+                            <a class="nav-link" href="{{ route('apps.promo') }}">
                                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/promotion.svg"
                                     width="80">
                                 <span class="nav-link-name">
@@ -864,7 +864,7 @@
                         <div class="menu-title">Home</div>
                     </div>
                 </a>
-                <a href="javascript:;">
+                <a href="{{ route('apps.promo') }}">
                     <div class="list-item ">
                         <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/promo.svg"
                             width="60" height="60">
@@ -1294,12 +1294,12 @@
                 </div>
                 <div class="provider-nav">
                     <a href="#" class="provider-link">+21</a>
-                    <a href="news.html" class="provider-link">Berita</a>
-                    <a href="promotion.html" class="provider-link">Promosi</a>
-                    <a href="help.html#About" class="provider-link">Tentang Kami</a>
-                    <a href="contact.html" class="provider-link">Kontak Kami</a>
-                    <a href="help.html" class="provider-link">Persyaratan &amp; Ketentuan</a>
-                    <a href="help.html#FAQ" class="provider-link">FAQ</a>
+                    <a href="#" class="provider-link">Berita</a>
+                    <a href="{{ route('apps.promo') }}" class="provider-link">Promosi</a>
+                    <a href="https://direct.lc.chat/17088249/" class="provider-link">Tentang Kami</a>
+                    <a href="https://direct.lc.chat/17088249/" class="provider-link">Kontak Kami</a>
+                    <a href="#" class="provider-link">Persyaratan &amp; Ketentuan</a>
+                    <a href="#" class="provider-link">FAQ</a>
                 </div>
             </div>
         </div>
@@ -1329,7 +1329,7 @@
             </div>
             <div class="footer-title">Masuk</div>
         </a>
-        <a class="footer-item " href="javascript:;" onclick="routeNav('/promotion')">
+        <a class="footer-item " href="{{ route('apps.promo') }}">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/promo.svg" width="60">
             </div>

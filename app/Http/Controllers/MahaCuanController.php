@@ -420,6 +420,18 @@ class MahaCuanController extends Controller
         return view('mahacuan.DoLogin.help.help', compact('data'));
     }
 
+    public function promo()
+    {
+        // $userid = auth()->user()->id;
+        // $data = DB::table('users')
+        //     ->join('members', 'members.user_id', '=', 'users.id')
+        //     ->join('bank_accounts', 'members.id', '=', 'bank_accounts.member_id')
+        //     ->join('banks', 'bank_accounts.bank_id', '=', 'banks.id')
+        //     ->where('users.id', $userid)
+        //     ->get();
+        return view('mahacuan.Login.promosi');
+    }
+
     public function logout_mahacuan(Request $request)
     {
         Auth::logout();

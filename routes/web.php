@@ -106,6 +106,7 @@ Route::post('/apps/deposit_save', [App\Http\Controllers\MahaCuanController::clas
 
 Route::get('/apps/tarik_dana', [App\Http\Controllers\MahaCuanController::class, 'tarik_dana'])->name('apps.tarik_dana')->middleware('auth');
 
+Route::get('/apps/promo', [App\Http\Controllers\MahaCuanController::class, 'promo'])->name('apps.promo');
 Route::get('/apps/bonus', [App\Http\Controllers\MahaCuanController::class, 'bonus'])->name('apps.bonus')->middleware('auth');
 Route::get('/apps/memo', [App\Http\Controllers\MahaCuanController::class, 'memo'])->name('apps.memo')->middleware('auth');
 Route::get('/apps/profile', [App\Http\Controllers\MahaCuanController::class, 'profile'])->name('apps.profile')->middleware('auth');
