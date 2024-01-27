@@ -4433,7 +4433,7 @@
             </div>
             <div class="footer-title">Promosi</div>
         </a>
-        <a class="footer-item" target="_blank" rel="noreferrer" href="https://direct.lc.chat/15301668/">
+        <a class="footer-item" target="_blank" rel="noreferrer" href="https://direct.lc.chat/17088249/">
             <div class="footer-icon">
                 <img src="{{ asset('/') }}template_mahacuan/themes/1/img/navigation/livechat.svg" width="60">
             </div>
@@ -4543,7 +4543,7 @@
 
     <script src="{{ asset('/') }}template_mahacuan/themes/1/vendor/jquery-validate/jquery.validate.min.js"></script>
 
-    <div id="chat-widget-container"
+    {{-- <div id="chat-widget-container"
         style="opacity: 1; visibility: visible; z-index: 2147483639; position: fixed; bottom: 0px; width: 84px; height: 84px; max-width: 100%; max-height: calc(100% + 0px); min-height: 0px; min-width: 0px; background-color: transparent; border: 0px; overflow: hidden; right: 0px; transition: none 0s ease 0s !important;">
         <iframe allow="autoplay; microphone *; camera *; display-capture *; picture-in-picture *; fullscreen *;"
             src="https://secure.livechatinc.com/customer/action/open_chat?license_id=15301668&amp;group=0&amp;embedded=1&amp;widget_version=3&amp;unique_groups=0"
@@ -4553,7 +4553,7 @@
             allowtransparency="true" id="chat-widget-minimized" name="chat-widget-minimized"
             title="LiveChat chat widget" scrolling="no"
             style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: normal; display: block;"></iframe>
-    </div>
+    </div> --}}
 
 
     @include('sweetalert::alert')
