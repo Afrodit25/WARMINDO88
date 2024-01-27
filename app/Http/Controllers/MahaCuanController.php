@@ -281,7 +281,7 @@ class MahaCuanController extends Controller
                 'bonus_id' => '',
                 'amount' => '',
                 'notes' => '',
-                'img_bukti_payment' => 'required|image|file|max:1024',
+                'img_bukti_payment' => 'required',
             ]);
 
             $amount = $request->input('amount') * 1000;
