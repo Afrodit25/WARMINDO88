@@ -2873,11 +2873,11 @@
                         @foreach ($data as $val)
                         <div class="balance-header">
                             <h6>DOMPET</h6>
-                            <div class="acc-balance"><span name="mainBalance">{{ rupiah($val->saldo_deposit) }}.00</span></div>
+                            <div class="acc-balance"><span name="mainBalance">{{ rupiah($val->saldo_deposit) }}</span></div>
                         </div>
                         <div class="balance-category d-flex align-items-center">
                             <div class="category-name m-0">DOMPET UTAMA</div>
-                            <div class="acc-balance ml-auto"><span id="balance-common-total">{{ rupiah($val->saldo_deposit) }}.00</span></div>
+                            <div class="acc-balance ml-auto"><span id="balance-common-total">{{ rupiah($val->saldo_deposit) }}</span></div>
                         </div>
                         @endforeach
                         <div class="balance-category d-flex align-items-center">
