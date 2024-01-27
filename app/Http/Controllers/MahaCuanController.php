@@ -8,6 +8,7 @@ use App\Models\Bonus;
 use App\Models\Deposit;
 use App\Models\Member;
 use App\Models\User;
+use App\Models\WithDraw;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -325,8 +326,37 @@ class MahaCuanController extends Controller
         }
     }
 
-    public function tarik_dana()
+    public function tarik_dana(Request $request)
     {
+        if ($request->ajax()) {
+            $query = DB::table('with_draws');
+
+            // Tambahkan filter sesuai kebutuhan
+            // if ($request->has('name')) {
+            //     $query->where('products.name', 'like', '%' . $request->name . '%');
+            // }
+
+            // if ($request->has('category')) {
+            //     $query->where('categories.name', $request->category);
+            // }
+
+            // Tambahkan pengurutan descending berdasarkan kolom tertentu
+            $query->orderByDesc('with_draws.updated_at');
+
+            $data = $query->get();
+
+            return DataTables::of($data)
+                ->addColumn('nominal_withdraw', function ($row) {
+                    return rupiah($row->nominal_withdraw);
+                })
+                ->addColumn('created_at', function ($row) {
+                    return Carbon::parse($row->created_at)->format('d M Y H:i:s');
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+
+
         $userid = auth()->user()->id;
 
         $data = DB::table('users')
@@ -358,6 +388,56 @@ class MahaCuanController extends Controller
             // ->where('bank_account_pemiliks.bank_id', $userid)
             ->get();
         return view('mahacuan.DoLogin.tarik_dana.tarik_dana', compact('data','bonus','bankOwner','bank','bankGroup','bankUtama'));
+    }
+
+    public function tarik_dana_save(Request $request)
+    {
+
+        $userid = auth()->user()->id;
+        $member = DB::table('members')->where('user_id', $userid)->first();
+
+        DB::beginTransaction();
+        try {
+            $this->validate($request, [
+                'amount_withdraw' => 'required',
+                'bankDestination' => 'required',
+            ]);
+
+            $amount = $request->input('amount_withdraw') * 1000;
+
+            if($amount > $member->saldo_deposit)
+            {
+                Alert::error('Error', 'Withdraw tidak boleh melebihi dari sisa saldo anda !!');
+                return redirect('apps/tarik_dana')->with(['success' => 'Withdraw tidak boleh melebihi dari sisa saldo anda !!']);
+            }
+
+
+            // $memberUpdate = Member::find($member->id);
+            // $memberUpdate->update([
+            //     'saldo_deposit' => $member->saldo_deposit - $amount,
+            // ]);
+
+            $WithDrawSave = WithDraw::create([
+                'berita_withdraw' => '-',
+                'nominal_withdraw' => $amount,
+                'status_withdraw' => 'PENDING',
+                'remarks_withdraw' => '',
+                'updateBy' => '',
+                'user_id' => $userid,
+                'member_id' => $member->id,
+                'bank_account_id' => $request->bankDestination,
+            ]);
+            $lastInsertid_WithDraw = $WithDrawSave->id;
+
+
+            DB::commit();
+            Alert::success('Success', 'Penarikan Saldo anda akan di proses oleh admin !');
+            return redirect('apps/tarik_dana')->with(['success' => 'Penarikan Saldo anda akan di proses oleh admin !']);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+            // return redirect('apps/tambah_dana')->with(['error' => 'Data Deposit gagal di tambahkan !']);
+        }
     }
 
     public function bonus()

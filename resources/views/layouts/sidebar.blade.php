@@ -74,7 +74,7 @@
                     <li class="submenu">
                         <a href="#"><i class="la la-crosshairs"></i> <span> Withdraw </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
-                            <li><a href="#"> All Withdraw </a></li>
+                            <li><a class="{{ request()->is('Withdraw') ? 'active' : '' }}" href="{{ url('Withdraw') }}"> All Withdraw </a></li>
                         </ul>
                     </li>
                     @endcan

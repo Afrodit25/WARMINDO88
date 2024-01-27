@@ -92,7 +92,8 @@
         </div>
     </div>
     <div class="transaksi-form">
-        <form id="formWithdraw" novalidate="novalidate">
+        <form id="formWithdraw" action="{{ route('apps.tarik_dana_save') }}" method="POST" novalidate="novalidate">
+            @csrf
             <div class="transaksi-formulir">
                 <div class="formulir-title">Formulir Penarikan</div>
                 <div class="formulir-form">
@@ -103,11 +104,12 @@
                             </div>
                             <div class="col-lg-5">
                                 <select name="bankDestination" id="memberBankSelect"
-                                    style="font-size: 12px; border-top-left-radius:3px; border-bottom-left-radius:3px; padding: 6px; font-weight: 600;">
+                                    style="font-size: 12px; border-top-left-radius:3px; border-bottom-left-radius:3px; padding: 6px; font-weight: 600;" required>
                                     <optgroup label="Bank Utama">
-                                        <option value="utama" data-code="bca" data-accountnumber="9876543210">
-                                            BCA - 9876543210
-                                        </option>
+                                        @foreach ($bankUtama as $val)
+                                            <option value="{{ $val->id }}">{{ $val->bank_name }} -
+                                                {{ $val->no_rekening }}</option>
+                                        @endforeach
                                     </optgroup>
                                     <optgroup label="Bank Lain">
                                     </optgroup>
@@ -143,7 +145,7 @@
                                 <div class="row">
                                     <div class="col-lg-5">
                                         <input class="form-control money" type="number" min="50"
-                                            max="100000" name="amount" id="withdrawAmount" placeholder="...">
+                                            max="100000" name="amount_withdraw" id="withdrawAmount" placeholder="..." required>
                                     </div>
                                     <span class="m-auto">
                                         <i class="fas fa-equals	"></i>
@@ -162,7 +164,8 @@
                         </div>
                     </div>
                     <div class="form-group text-center">
-                        <button type="submit" class="btn-custom" id="submit-withdraw">Kirim</button>
+                        {{-- <button type="submit" class="btn-custom" id="submit-withdraw">Kirim</button> --}}
+                        <button type="submit" class="btn-custom get-btn">Kirim</button>
                     </div>
                 </div>
             </div>
@@ -181,12 +184,12 @@
             <div class="col-lg-8">
                 <div class="form-title">Riwayat Withdraw</div>
             </div>
-            <div class="col-lg-4">
+            {{-- <div class="col-lg-4">
                 <div class="form-group">
                     <label>Pilih Tanggal</label>
                     <input type="text" id="withdrawRange" readonly="readonly">
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="container-fluid table-dataTable">
@@ -197,6 +200,7 @@
                     <th scope="col" class="text-left">Tanggal</th>
                     <th scope="col" class="text-left">Nominal</th>
                     <th scope="col" class="text-center">Status</th>
+                    {{-- <th scope="col" class="text-center">Action</th> --}}
                 </tr>
             </thead>
             <tbody id="withdrawHistoryTableBody"></tbody>

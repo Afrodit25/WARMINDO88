@@ -77,7 +77,7 @@ Route::delete('Deposit/delete/{id}', [DepositController::class, 'delete'])->name
 
 
 Route::get('/Withdraw', [WithdrawController::class, 'index'])->name('Withdraws')->middleware('auth');
-Route::get('/Withdraw/json', [WithdrawController::class, 'json'])->middleware('auth');
+Route::match(['get', 'put'], 'Withdraw/update_status/{id}', [WithdrawController::class, 'UpdateStatus'])->name('Withdraw.UpdateStatus')->middleware('auth');
 
 
 
@@ -104,7 +104,8 @@ Route::get('/apps/tambah_dana', [App\Http\Controllers\MahaCuanController::class,
 Route::match(['get', 'post'], '/apps/tambah_dana/json_tambahDana', [MahaCuanController::class, 'json_tambahDana'])->name('apps.json_tambahDana')->middleware('auth');
 Route::post('/apps/deposit_save', [App\Http\Controllers\MahaCuanController::class, 'deposit_save'])->name('apps.deposit_save')->middleware('auth');
 
-Route::get('/apps/tarik_dana', [App\Http\Controllers\MahaCuanController::class, 'tarik_dana'])->name('apps.tarik_dana')->middleware('auth');
+Route::match(['get', 'post'], '/apps/tarik_dana', [MahaCuanController::class, 'tarik_dana'])->name('apps.tarik_dana')->middleware('auth');
+Route::match(['get', 'post'], '/apps/tarik_dana_save', [MahaCuanController::class, 'tarik_dana_save'])->name('apps.tarik_dana_save')->middleware('auth');
 
 Route::get('/apps/promo', [App\Http\Controllers\MahaCuanController::class, 'promo'])->name('apps.promo');
 Route::get('/apps/bonus', [App\Http\Controllers\MahaCuanController::class, 'bonus'])->name('apps.bonus')->middleware('auth');
