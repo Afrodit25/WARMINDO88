@@ -2531,12 +2531,14 @@
                     <a href="#" class="text-white" name="refreshWallet"><span><i
                                 class="fa fa-sync"></i></span></a>
                 </div>
+                @foreach ($data as $val)
                 <div class="mobile-button--transaksi" href="#" data-toggle="modal"
                     data-target="#accountBalance">
                     <i class="fas fa-coins m-auto"></i> IDR
-                    <a class="wallet-amount" id="wallet-amount"><span name="mainBalance">0.00</span></a>
+                    <a class="wallet-amount" id="wallet-amount"><span name="mainBalance">{{ $val->saldo_deposit }}.00</span></a>
                 </div>
-                <div data-target="slide-out" class="mobile-button--menu sidenav-toggle">
+                @endforeach
+                <div data-target="slide-out-" class="mobile-button--menu sidenav-toggle">
                     <i class="fas fa-bars m-auto"></i>
                 </div>
             </div>
