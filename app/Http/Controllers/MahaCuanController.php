@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 use Yajra\DataTables\DataTables;
 
 class MahaCuanController extends Controller
@@ -309,7 +310,8 @@ class MahaCuanController extends Controller
 
 
             DB::commit();
-            return redirect('apps/tambah_dana')->with(['success' => 'Data Deposit berhasil di tambah !']);
+            Alert::success('Success', 'Anda berhasil melakukan deposit sebesar '.rupiah($amount).' !');
+            return redirect('apps/tambah_dana')->with(['success' => 'Anda berhasil melakukan deposit sebesar '.rupiah($amount).' !']);
         } catch (\Throwable $th) {
             DB::rollBack();
             throw $th;

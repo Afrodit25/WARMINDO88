@@ -4550,6 +4550,9 @@
             title="LiveChat chat widget" scrolling="no"
             style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: normal; display: block;"></iframe>
     </div>
+
+
+    @include('sweetalert::alert')
 </body>
 
 @yield('under_body')
