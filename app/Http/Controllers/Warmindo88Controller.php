@@ -14,4 +14,6 @@ class Warmindo88Controller extends Controller
 
         return view('website.warmindo88.Auth.main');
     }
+
+
 }

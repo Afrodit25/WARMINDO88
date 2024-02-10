@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BankAccount;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BankAccountController extends Controller
 {
@@ -20,6 +21,7 @@ class BankAccountController extends Controller
                 'member_id'             => $request->member_id,
             ]);
             DB::commit();
+            Alert::success('Success', 'Save Bank Successfull !');
             return redirect()->back()->with(['success' => 'Data Bank Account berhasil di tambah !']);
         } catch (\Throwable $th) {
             DB::rollBack();

@@ -1386,7 +1386,7 @@
         </div>
     </div>
 
-    @include('sweetalert::alert')
+
 
     <script src="{{ asset('/') }}template_mahacuan/themes/1/js/vendor.js"></script>
     <script src="{{ asset('/') }}template_mahacuan/themes/1/js/global65a9.js"></script>
@@ -1396,7 +1396,7 @@
     <script src="{{ asset('/') }}template_mahacuan/themes/1/vendor/jquery-validate/jquery.validate.min.js"></script>
 
 
-
+    @include('sweetalert::alert')
 
     @yield('under_body')
 

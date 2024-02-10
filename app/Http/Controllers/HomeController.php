@@ -48,7 +48,7 @@ class HomeController extends Controller
                 return $this->home_sales();
             }
             elseif (auth()->user()->hasRole('member')) {
-                return $this->home_member();
+                return redirect('apps_m/home');
             }
         }
 
