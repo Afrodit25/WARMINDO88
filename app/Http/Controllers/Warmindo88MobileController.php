@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bank;
 use App\Models\BankAccount;
 use App\Models\Bonus;
+use App\Models\Deposit;
 use App\Models\Member;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class Warmindo88MobileController extends Controller
     public function userCheck(Request $request)
     {
         $usernameCheck = User::where('username', $request->username)->get();
-        if($usernameCheck){
+        if ($usernameCheck) {
             return response()->json([
                 "status" => false,
                 "errors" => ["Username already exist"]
@@ -42,7 +43,7 @@ class Warmindo88MobileController extends Controller
             'password' => 'required'
         ]);
 
-        if ($validator->fails()){
+        if ($validator->fails()) {
             Alert::error('Error Title', 'Error Message');
             return redirect()->back();
         } else {
@@ -60,7 +61,7 @@ class Warmindo88MobileController extends Controller
     {
         $bank = Bank::all();
         $bankGroup = $bank->groupBy('bank_type');
-        return view('website.warmindo88.mobile.auth.daftar', compact('bank','bankGroup'));
+        return view('website.warmindo88.mobile.auth.daftar', compact('bank', 'bankGroup'));
     }
 
     public function daftar_save(Request $request)
@@ -129,7 +130,8 @@ class Warmindo88MobileController extends Controller
 
     public function home()
     {
-        return view('website.warmindo88.mobile.widget.index');
+        $member = Member::where('user_id', auth()->user()->id)->first();
+        return view('website.warmindo88.mobile.widget.index', compact('member'));
     }
 
     public function deposit()
@@ -153,7 +155,7 @@ class Warmindo88MobileController extends Controller
         $bankUtama = DB::table('members')
             ->join('bank_accounts', 'members.id', '=', 'bank_accounts.member_id')
             ->join('banks', 'bank_accounts.bank_id', '=', 'banks.id')
-            ->select('bank_accounts.id','bank_accounts.no_rekening','bank_accounts.nama_rekening','banks.bank_name')
+            ->select('bank_accounts.id', 'bank_accounts.no_rekening', 'bank_accounts.nama_rekening', 'banks.bank_name')
             ->where('user_id', $userid)
             ->orderByDesc('bank_accounts.updated_at')
             // ->limit(1)
@@ -161,18 +163,71 @@ class Warmindo88MobileController extends Controller
 
         $bankOwner = DB::table('bank_account_pemiliks')
             ->join('banks', 'bank_account_pemiliks.bank_id', '=', 'banks.id')
-            ->select('bank_account_pemiliks.*','banks.bank_name','banks.bank_type')
+            ->select('bank_account_pemiliks.*', 'banks.bank_name', 'banks.bank_type')
             // ->where('bank_account_pemiliks.bank_id', $userid)
             ->get();
 
-        $saldoMember = Member::where('user_id', $userid)->first();
+        $member = Member::where('user_id', auth()->user()->id)->first();
+        // return $saldoMember;
 
-        return view('website.warmindo88.mobile.widget.deposit', compact('data','bonus','bankOwner','bank','bankGroup','bankUtama','saldoMember'));
+        return view('website.warmindo88.mobile.widget.deposit', compact('data', 'bonus', 'bankOwner', 'bank', 'bankGroup', 'bankUtama', 'member'));
+    }
+
+    public function deposit_save(Request $request)
+    {
+        $userid = auth()->user()->id;
+        $member_id = DB::table('members')->where('user_id', $userid)->first();
+        DB::beginTransaction();
+        try {
+            $this->validate($request, [
+                'bankMember' => 'required',
+                'bankOwner' => '',
+                'bonus_id' => '',
+                'amount' => '',
+                'notes' => '',
+                // 'img_bukti_payment' => 'required|image|file|max:1024',
+                'img_bukti_payment' => 'required',
+            ]);
+
+            $amount = $request->input('amount') * 1000;
+
+            $saldo_deposit = Deposit::where('member_id', $member_id->id)->sum('nominal_deposit');
+
+            $member = Member::find($member_id->id);
+            // $member->update([
+            //     'saldo_deposit' => $saldo_deposit + $amount,
+            // ]);
+
+            $DepositSave = Deposit::create([
+                'berita_deposit' => '-',
+                'nominal_deposit' => $amount,
+                'saldo_deposit' => $saldo_deposit + $amount,
+                'status_deposit' => 'PENDING',
+                'img_bukti_pembayaran' => $request->file('img_bukti_payment')->store('WARMINDO88/Bukti-Pembayaran'),
+                'remarks_deposit' => $request->input('notes'),
+                'bank_account_id' => $request->input('bankMember'),
+                'bank_account_pemilik_id' => $request->input('bankOwner'),
+                'member_id' => $member_id->id,
+                'user_id' => $userid,
+                'bonus_id' => $request->input('bonus_id'),
+            ]);
+            $lastInsertid_Deposit = $DepositSave->id;
+
+
+            DB::commit();
+            Alert::success('Success', 'Anda berhasil melakukan deposit sebesar '.rupiah($amount).' !');
+            return redirect()->back()->with(['success' => 'Anda berhasil melakukan deposit sebesar '.rupiah($amount).' !']);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+            // return redirect('apps/tambah_dana')->with(['error' => 'Data Deposit gagal di tambahkan !']);
+        }
     }
 
     public function withdraw()
     {
-        return view('website.warmindo88.mobile.widget.withdraw');
+        $member = Member::where('user_id', auth()->user()->id)->first();
+        return view('website.warmindo88.mobile.widget.withdraw', compact('member'));
     }
 
     public function promosi()
@@ -215,6 +270,4 @@ class Warmindo88MobileController extends Controller
 
         return redirect('/');
     }
-
-
 }

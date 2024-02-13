@@ -1717,7 +1717,7 @@
                     <div class="member-balance">
                         <h6>TOTAL SALDO :
                             <a data-toggle="modal" data-target="#accountBalance">
-                                <span class="mr-1">IDR</span><span id="mainBalance" name="mainBalance">{{ rupiah($saldoMember->saldo_deposit) }}</span>
+                                <span class="mr-1">IDR</span><span id="mainBalance" name="mainBalance">{{ rupiah($member->saldo_deposit) }}</span>
                             </a>
                         </h6>
                     </div>
@@ -1815,7 +1815,7 @@
                 <div class="mobile-button--transaksi" href="#" data-toggle="modal"
                     data-target="#accountBalance">
                     <i class="fas fa-coins m-auto"></i> IDR
-                    <a class="wallet-amount" id="wallet-amount"><span name="mainBalance">{{ rupiah($saldoMember->saldo_deposit) }}</span></a>
+                    <a class="wallet-amount" id="wallet-amount"><span name="mainBalance">{{ rupiah($member->saldo_deposit) }}</span></a>
                 </div>
                 <div data-target="slide-out" class="mobile-button--menu sidenav-toggle">
                     <i class="fas fa-bars m-auto"></i>
@@ -2151,11 +2151,11 @@
                     <div class="popup-account-balance">
                         <div class="balance-header">
                             <h6>DOMPET</h6>
-                            <div class="acc-balance"><span name="mainBalance">{{ rupiah($saldoMember->saldo_deposit) }}</span></div>
+                            <div class="acc-balance"><span name="mainBalance">{{ rupiah($member->saldo_deposit) }}</span></div>
                         </div>
                         <div class="balance-category d-flex align-items-center">
                             <div class="category-name m-0">DOMPET UTAMA</div>
-                            <div class="acc-balance ml-auto"><span id="balance-common-total">{{ rupiah($saldoMember->saldo_deposit) }}</span></div>
+                            <div class="acc-balance ml-auto"><span id="balance-common-total">{{ rupiah($member->saldo_deposit) }}</span></div>
                         </div>
                         <div class="balance-category d-flex align-items-center">
                             <div class="category-name m-0">DOMPET POKER</div>

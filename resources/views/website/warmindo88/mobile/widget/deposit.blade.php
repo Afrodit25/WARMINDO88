@@ -139,9 +139,21 @@
                                 </div>
                             </div>
                             <div class="transaksi-form">
-                                <form id="formDeposit" enctype="multipart/form-data" novalidate="novalidate">
+                                <form id="formDeposit" method="POST" action="{{ route('apps_m.widget.deposit_save') }}"
+                                    enctype="multipart/form-data" data-parsley-validate>
+                                    @csrf
                                     <div class="transaksi-formulir flip-card">
                                         <div class="flip-front">
+                                            @if (session()->has('success'))
+                                                <div class="alert alert-success" role="alert">
+                                                    {{ session('success') }}
+                                                </div>
+                                            @endif
+                                            @if (session()->has('error'))
+                                                <div class="alert alert-danger" role="alert">
+                                                    {{ session('error') }}
+                                                </div>
+                                            @endif
                                             <div class="formulir-title"><i class="fas fa-wallet"></i> | Formulir
                                                 Deposit</div>
                                             <div class="formulir-form">
@@ -163,12 +175,13 @@
                                                                     style="font-size: 12px; border-top-left-radius:3px; border-bottom-left-radius:3px; padding: 6px; font-weight: 600;">
                                                                     <optgroup label="Bank Utama">
                                                                         @foreach ($bankUtama as $val)
-                                                                            <option value="{{ $val->id }}">{{ $val->bank_name }} -
+                                                                            <option value="{{ $val->id }}">
+                                                                                {{ $val->bank_name }} -
                                                                                 {{ $val->no_rekening }}</option>
                                                                         @endforeach
                                                                     </optgroup>
-                                                                    {{-- <optgroup label="Bank Lain">
-                                                                    </optgroup> --}}
+                                                                    <optgroup label="Bank Lain">
+                                                                    </optgroup>
                                                                 </select>
                                                                 <div class="input-group-append">
                                                                     <a href="#" data-toggle="modal"
@@ -186,389 +199,26 @@
                                                 <div class="form-group mb-0">
                                                     <div class="row">
                                                         <div class="col-lg-3 d-flex align-items-center">
-                                                            <label>Pilih Bank</label>
+                                                            <label>Pilih Bank Tujuan</label>
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            <select name="bank" id="bankSelect">
+                                                            <select name="bankOwner" id="bankSelect" required>
                                                                 <option value="">--- Pilih Bank ---</option>
-                                                                <optgroup label="bank">
-                                                                    <option value="015132c0-894b-4852-aabf-fac12100efed"
-                                                                        data-code="bca" data-min="20" data-max="100000"
-                                                                        data-rate="100">
-                                                                        BCA
+                                                                @foreach ($bankOwner as $val)
+                                                                    <option value="{{ $val->id }}">
+                                                                        {{ $val->bank_name }} -
+                                                                        {{ $val->nama_rekening_bank_account_pemilik }} -
+                                                                        {{ $val->no_rekening_bank_account_pemilik }}
                                                                     </option>
-                                                                    <option value="714fea48-d2f6-462d-8f9a-9fe6df80bf98"
-                                                                        data-code="bri" data-min="20" data-max="100000"
-                                                                        data-rate="100">
-                                                                        BRI
-                                                                    </option>
-                                                                </optgroup>
-                                                                <optgroup label="epayment">
-                                                                    <option value="9b99e777-47e6-471b-bfd5-6228c0a7af53"
-                                                                        data-code="qris" data-min="20" data-max="10000"
-                                                                        data-rate="100">
-                                                                        QRIS
-                                                                    </option>
-                                                                    <option value="326a9056-6d8e-4e82-b8c2-59c39e1f9d24"
-                                                                        data-code="ovo" data-min="20" data-max="10000"
-                                                                        data-rate="100">
-                                                                        OVO
-                                                                    </option>
-                                                                    <option value="5a2b5ef7-1869-4f7a-b35c-f15e1b008ddb"
-                                                                        data-code="gopay" data-min="20" data-max="10000"
-                                                                        data-rate="100">
-                                                                        GOPAY
-                                                                    </option>
-                                                                    <option value="d226935b-df83-428f-b2d7-b4cc1ed1e22c"
-                                                                        data-code="dana" data-min="20" data-max="10000"
-                                                                        data-rate="100">
-                                                                        DANA
-                                                                    </option>
-                                                                </optgroup>
+                                                                @endforeach
                                                             </select>
                                                             <span id="bankSelect-error"></span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group bankOption"
-                                                    id="bank-015132c0-894b-4852-aabf-fac12100efed" style="display: none;">
-                                                    <div class="row">
-                                                        <div class="col-lg-3"></div>
-                                                        <div class=" col-lg-6">
-                                                            <div class="card">
-                                                                <div class="card-header text-center p-1">
-                                                                    <img class="img-fluid" style="max-height: 150px"
-                                                                        src="https://statis-images.s3.ap-southeast-1.amazonaws.com/global/payment/V2/IDR/bank/bca.webp">
-                                                                </div>
-                                                                <div class="card-body text-dark"
-                                                                    style="font-weight: 600; font-size: 11px;">
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nama Tujuan Akun:
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            ADITIA RUKMANA PUTRA
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nomor Akun Tujuan:
-                                                                        </div>
-                                                                        <div class="col-auto flex-shrink-1">
-                                                                            <a href="javascript:;" class="ml-2 p-1"
-                                                                                name="copyAddress"
-                                                                                id="015132c0-894b-4852-aabf-fac12100efed">
-                                                                                <span
-                                                                                    id="addressText-015132c0-894b-4852-aabf-fac12100efed">1832073355</span>
-                                                                                <span name="buttonCopy"><i
-                                                                                        class="fas fa-copy"></i></span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Min. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 20
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Max. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 100,000
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group bankOption"
-                                                    id="bank-714fea48-d2f6-462d-8f9a-9fe6df80bf98" style="display: none;">
-                                                    <div class="row">
-                                                        <div class="col-lg-3"></div>
-                                                        <div class=" col-lg-6">
-                                                            <div class="card">
-                                                                <div class="card-header text-center p-1">
-                                                                    <img class="img-fluid" style="max-height: 150px"
-                                                                        src="https://statis-images.s3.ap-southeast-1.amazonaws.com/global/payment/V2/IDR/bank/bri.png">
-                                                                </div>
-                                                                <div class="card-body text-dark"
-                                                                    style="font-weight: 600; font-size: 11px;">
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nama Tujuan Akun:
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            RULLY PANCA DEWA
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nomor Akun Tujuan:
-                                                                        </div>
-                                                                        <div class="col-auto flex-shrink-1">
-                                                                            <a href="javascript:;" class="ml-2 p-1"
-                                                                                name="copyAddress"
-                                                                                id="714fea48-d2f6-462d-8f9a-9fe6df80bf98">
-                                                                                <span
-                                                                                    id="addressText-714fea48-d2f6-462d-8f9a-9fe6df80bf98">010501111909507</span>
-                                                                                <span name="buttonCopy"><i
-                                                                                        class="fas fa-copy"></i></span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Min. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 20
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Max. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 100,000
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group bankOption"
-                                                    id="epayment-9b99e777-47e6-471b-bfd5-6228c0a7af53"
-                                                    style="display: none;">
-                                                    <div class="row">
-                                                        <div class="col-lg-3"></div>
-                                                        <div class="qris-payment col-lg-6">
-                                                            <div class="card">
-                                                                <div class="card-header text-center p-1">
-                                                                    <img class="img-fluid" style="max-height: 150px"
-                                                                        src="https://images.linkcdn.cloud/global/payment/V2/IDR/qris/16591-3247-KEDAI NOVI-1699183505.png">
-                                                                </div>
-                                                                <div class="card-body text-dark"
-                                                                    style="font-weight: 600; font-size: 11px;">
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nama Tujuan Akun:
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            KEDAI NOVI
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nomor Akun Tujuan:
-                                                                        </div>
-                                                                        <div class="col-auto flex-shrink-1">
-                                                                            <a href="javascript:;" class="ml-2 p-1"
-                                                                                name="copyAddress"
-                                                                                id="9b99e777-47e6-471b-bfd5-6228c0a7af53">
-                                                                                <span
-                                                                                    id="addressText-9b99e777-47e6-471b-bfd5-6228c0a7af53">XXXXX</span>
-                                                                                <span name="buttonCopy"><i
-                                                                                        class="fas fa-copy"></i></span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Min. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 20
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Max. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 10,000
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group bankOption"
-                                                    id="epayment-326a9056-6d8e-4e82-b8c2-59c39e1f9d24"
-                                                    style="display: none;">
-                                                    <div class="row">
-                                                        <div class="col-lg-3"></div>
-                                                        <div class="qris-payment col-lg-6">
-                                                            <div class="card">
-                                                                <div class="card-header text-center p-1">
-                                                                    <img class="img-fluid" style="max-height: 150px"
-                                                                        src="https://images.linkcdn.cloud/global/payment/V2/IDR/qris/10580-3247-KEDAI NOVI-1699181903.png">
-                                                                </div>
-                                                                <div class="card-body text-dark"
-                                                                    style="font-weight: 600; font-size: 11px;">
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nama Tujuan Akun:
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            KEDAI NOVI
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nomor Akun Tujuan:
-                                                                        </div>
-                                                                        <div class="col-auto flex-shrink-1">
-                                                                            <a href="javascript:;" class="ml-2 p-1"
-                                                                                name="copyAddress"
-                                                                                id="326a9056-6d8e-4e82-b8c2-59c39e1f9d24">
-                                                                                <span
-                                                                                    id="addressText-326a9056-6d8e-4e82-b8c2-59c39e1f9d24">XXXXX</span>
-                                                                                <span name="buttonCopy"><i
-                                                                                        class="fas fa-copy"></i></span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Min. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 20
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Max. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 10,000
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group bankOption"
-                                                    id="epayment-5a2b5ef7-1869-4f7a-b35c-f15e1b008ddb"
-                                                    style="display: none;">
-                                                    <div class="row">
-                                                        <div class="col-lg-3"></div>
-                                                        <div class="qris-payment col-lg-6">
-                                                            <div class="card">
-                                                                <div class="card-header text-center p-1">
-                                                                    <img class="img-fluid" style="max-height: 150px"
-                                                                        src="https://images.linkcdn.cloud/global/payment/V2/IDR/qris/10581-3247-KEDAI NOVI-1699182091.png">
-                                                                </div>
-                                                                <div class="card-body text-dark"
-                                                                    style="font-weight: 600; font-size: 11px;">
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nama Tujuan Akun:
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            KEDAI NOVI
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nomor Akun Tujuan:
-                                                                        </div>
-                                                                        <div class="col-auto flex-shrink-1">
-                                                                            <a href="javascript:;" class="ml-2 p-1"
-                                                                                name="copyAddress"
-                                                                                id="5a2b5ef7-1869-4f7a-b35c-f15e1b008ddb">
-                                                                                <span
-                                                                                    id="addressText-5a2b5ef7-1869-4f7a-b35c-f15e1b008ddb">XXXXX</span>
-                                                                                <span name="buttonCopy"><i
-                                                                                        class="fas fa-copy"></i></span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Min. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 20
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Max. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 10,000
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group bankOption"
-                                                    id="epayment-d226935b-df83-428f-b2d7-b4cc1ed1e22c" style="">
-                                                    <div class="row">
-                                                        <div class="col-lg-3"></div>
-                                                        <div class="qris-payment col-lg-6">
-                                                            <div class="card">
-                                                                <div class="card-header text-center p-1">
-                                                                    <img class="img-fluid" style="max-height: 150px"
-                                                                        src="https://images.linkcdn.cloud/global/payment/V2/IDR/qris/10583-3247-KEDAI NOVI-1699181640.png">
-                                                                </div>
-                                                                <div class="card-body text-dark"
-                                                                    style="font-weight: 600; font-size: 11px;">
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nama Tujuan Akun:
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            KEDAI NOVI
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Nomor Akun Tujuan:
-                                                                        </div>
-                                                                        <div class="col-auto flex-shrink-1">
-                                                                            <a href="javascript:;" class="ml-2 p-1"
-                                                                                name="copyAddress"
-                                                                                id="d226935b-df83-428f-b2d7-b4cc1ed1e22c">
-                                                                                <span
-                                                                                    id="addressText-d226935b-df83-428f-b2d7-b4cc1ed1e22c">XXXXX</span>
-                                                                                <span name="buttonCopy"><i
-                                                                                        class="fas fa-copy"></i></span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Min. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 20
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            Max. Deposit:
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            IDR 10,000
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
+                                                {{-- @include('mahacuan.DoLogin.tambah_dana.bankOption') --}}
+
                                                 <div class="form-group walletDest" hidden=""
                                                     style="display: block;">
                                                     <div class="row">
@@ -584,6 +234,24 @@
                                                     </div>
                                                     <span id="walletSelectDeposit-error"></span>
                                                 </div>
+                                                <br>
+                                                <div class="form-group mb-0">
+                                                    <div class="row">
+                                                        <div class="col-lg-3 d-flex align-items-center">
+                                                            <label>Bonus</label>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <select name="bonus_id" id="bonus_id">
+                                                                {{-- <option value="">--- Pilih Bonus ---</option> --}}
+                                                                @foreach ($bonus as $val)
+                                                                    <option value="{{ $val->id }}">
+                                                                        {{ $val->bonus_name }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                            <span id="bankSelect-error"></span>
+                                                        </div>
+                                                    </div>
+                                                </div><br>
                                                 <div class="form-group">
                                                     <div class="row">
                                                         <div class="col-lg-3 d-flex align-items-center">
@@ -594,7 +262,7 @@
                                                                 <div class="col-lg-5">
                                                                     <input name="amount" id="depositAmount"
                                                                         type="number" placeholder="..." min="20"
-                                                                        max="10000">
+                                                                        max="100000" required>
                                                                 </div>
                                                                 <span class="m-auto">
                                                                     <i class="fas fa-equals	"></i>
@@ -648,13 +316,20 @@
                                                             <label>Bukti Pembayaran</label>
                                                         </div>
                                                         <div class="col-lg-5">
-                                                            <input id="proof" name="proof" type="file">
+                                                            <input class="@error('img_bukti_payment') is-invalid @enderror"
+                                                                id="proof" name="img_bukti_payment" type="file"
+                                                                required>
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <label class="formulir-desc">Hanya format *.jpg, *.jpeg,
                                                                 dan *.png yang diperbolehkan, maksimal 1 MB</label>
                                                         </div>
                                                     </div>
+                                                    @error('img_bukti_payment')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                                 <div class="form-group text-center">
                                                     <div class="row">
@@ -691,7 +366,7 @@
                                                     <div class="scan-img text-center">
                                                         <label class="d-block">Pay With</label>
                                                         <img class="img-fluid rounded"
-                                                            src="https://mahacuan.support/themes/1/img/bank-client/bank-client-square.jpg">
+                                                            src="https://mahacuan.live/themes/1/img/bank-client/bank-client-square.jpg">
                                                     </div>
                                                 </div>
                                             </div>
