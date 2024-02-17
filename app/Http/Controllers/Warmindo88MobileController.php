@@ -8,12 +8,14 @@ use App\Models\Bonus;
 use App\Models\Deposit;
 use App\Models\Member;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
+use Yajra\DataTables\DataTables;
 
 class Warmindo88MobileController extends Controller
 {
@@ -134,7 +136,7 @@ class Warmindo88MobileController extends Controller
         return view('website.warmindo88.mobile.widget.index', compact('member'));
     }
 
-    public function deposit()
+    public function deposit(Request $request)
     {
         $userid = auth()->user()->id;
 
@@ -147,8 +149,6 @@ class Warmindo88MobileController extends Controller
 
         $bank = Bank::all();
         $bankGroup = $bank->groupBy('bank_type');
-
-
 
         $bonus = Bonus::all();
 
@@ -168,9 +168,38 @@ class Warmindo88MobileController extends Controller
             ->get();
 
         $member = Member::where('user_id', auth()->user()->id)->first();
-        // return $saldoMember;
+
+
 
         return view('website.warmindo88.mobile.widget.deposit', compact('data', 'bonus', 'bankOwner', 'bank', 'bankGroup', 'bankUtama', 'member'));
+    }
+
+    public function deposit_json(Request $request)
+    {
+        $userid = auth()->user()->id;
+        if ($request->ajax()) {
+            $member = DB::table('deposits')
+            ->where('user_id', $userid);
+
+            // if ($request->filled('from_date') && $request->filled('to_date')) {
+            //     $query = $query->whereBetween('created_at', [$request->from_date, $request->to_date]);
+            // }
+
+            $query = $member->get();
+
+            return DataTables::of($query)
+            ->addColumn('tanggal', function ($data) {
+                return Carbon::parse($data->created_at)->format('d M Y H:i:s');
+            })
+            ->addColumn('nominal_deposit', function ($data) {
+                return rupiah($data->nominal_deposit);
+            })
+            ->addColumn('status_deposit', function ($data) {
+                return $data->status_deposit;
+            })
+            ->rawColumns(['nominal_deposit'])
+            ->make(true);
+        }
     }
 
     public function deposit_save(Request $request)
@@ -230,6 +259,34 @@ class Warmindo88MobileController extends Controller
         return view('website.warmindo88.mobile.widget.withdraw', compact('member'));
     }
 
+    public function withdraw_json(Request $request)
+    {
+        $userid = auth()->user()->id;
+        if ($request->ajax()) {
+            $withdraw = DB::table('with_draws')
+            ->where('user_id', $userid);
+
+            // if ($request->filled('from_date') && $request->filled('to_date')) {
+            //     $query = $query->whereBetween('created_at', [$request->from_date, $request->to_date]);
+            // }
+
+            $query = $withdraw->get();
+
+            return DataTables::of($query)
+            ->addColumn('tanggal', function ($data) {
+                return Carbon::parse($data->created_at)->format('d M Y H:i:s');
+            })
+            ->addColumn('nominal_withdraw', function ($data) {
+                return rupiah($data->nominal_withdraw);
+            })
+            ->addColumn('status_withdraw', function ($data) {
+                return $data->status_withdraw;
+            })
+            ->rawColumns(['nominal_withdraw'])
+            ->make(true);
+        }
+    }
+
     public function promosi()
     {
         return view('website.warmindo88.mobile.widget.promosi');
@@ -268,6 +325,7 @@ class Warmindo88MobileController extends Controller
 
         $request->session()->regenerateToken();
 
+        Alert::success('Success', 'Anda berhasil Logout !');
         return redirect('/');
     }
 }

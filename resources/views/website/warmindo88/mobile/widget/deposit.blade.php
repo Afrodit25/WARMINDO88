@@ -10,7 +10,7 @@
                 <ul class="component-tabs nav nav-tabs" id="transactionTabs">
                     <li class="nav-item">
                         <a class="button-pills nav-link active" id="nav-deposit-tab" data-toggle="tab" href="#nav-deposit"
-                            role="tab" aria-controls="nav-deposit" aria-expanded="false">
+                            role="tab" aria-controls="nav-deposit" aria-expanded="false"">
                             <img src="https://mahacuan.support/themes/1/img/navigation/deposit1.svg" width="40"
                                 height="40">
                             <span>Tambah Dana</span>
@@ -552,51 +552,9 @@
 
                             </div>
                         </div>
-                        <div class="transaksi-table-bottom">
-                            <div class="bottom-form">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-lg-4">
-                                        <div class="form-title">Informasi</div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" name="historyType"
-                                                        value="deposit" checked="">Deposit
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" name="historyType"
-                                                        value="adjustment">Adjustment
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <label for="depositRange">Pilih Tanggal</label>
-                                            <input class="form-control" type="text" id="depositRange"
-                                                readonly="readonly">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container-fluid table-dataTable">
-                                <table class="table table-hover table-bordered" id="depositHistoryTable">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" style="width: 20px;" class="text-left">No.</th>
-                                            <th scope="col" class="text-left">Tanggal</th>
-                                            <th scope="col" class="text-left w-25">Nominal</th>
-                                            <th scope="col" class="text-center">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="depositHistoryTableBody"></tbody>
-                                </table>
-                            </div>
-                        </div>
+                        {{-- include table deposit --}}
+                            @include('website.warmindo88.mobile.widget.list_deposit')
+                        {{-- include table deposit --}}
                     </div>
                     <div class="tab-pane fade" id="nav-withdraw" role="tabpanel" aria-labelledby="nav-withdraw-tab">
                         <div class="transaksi-grid">
@@ -783,34 +741,9 @@
 
                             </div>
                         </div>
-                        <div class="transaksi-table-bottom">
-                            <div class="bottom-form">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-lg-8">
-                                        <div class="form-title">Riwayat Withdraw</div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <label>Pilih Tanggal</label>
-                                            <input type="text" id="withdrawRange" readonly="readonly">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container-fluid table-dataTable">
-                                <table class="table table-hover table-bordered" id="withdrawHistoryTable">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="text-left">No.</th>
-                                            <th scope="col" class="text-left">Tanggal</th>
-                                            <th scope="col" class="text-left">Nominal</th>
-                                            <th scope="col" class="text-center">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="withdrawHistoryTableBody"></tbody>
-                                </table>
-                            </div>
-                        </div>
+                        {{-- include table withdraw --}}
+                            @include('website.warmindo88.mobile.widget.list_withdraw')
+                        {{-- include table withdraw --}}
                     </div>
                     <div class="tab-pane fade" id="nav-claim" role="tabpanel" aria-labelledby="nav-claim-tab">
                         <div class="transaksi-bonus" style="display: block;">

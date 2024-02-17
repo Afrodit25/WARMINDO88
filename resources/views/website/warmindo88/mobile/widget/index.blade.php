@@ -236,7 +236,7 @@
                                 <div class="swiper-slide" role="group" aria-label="3 / 7"
                                     style="width: 88px; margin-right: 10px;">
                                     <a href="javascript:;" onclick="routeNav('/livegames')">
-                                        <img src="https://images.linkcdn.cloud/global/nav-addons/hot_category.png"
+                                        <img src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/nav-addons/hot_category.png"
                                             width="30" height="12" class="hot-tag">
                                         <div class="category-item">
                                             <div class="icon">
@@ -334,7 +334,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=FSP&amp;gameCode=S-RH02&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="https://images.linkcdn.cloud/global/game-favorit/populer/small/S-RH02.jpg"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/S-RH02.jpg"
                                             width="110" height="80" alt="S-RH02">
                                     </a>
                                 </div>
@@ -346,7 +346,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=PGS&amp;gameCode=mahjong-ways&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="https://images.linkcdn.cloud/global/game-favorit/populer/small/mahjong-ways.webp"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/mahjong-ways.webp"
                                             width="110" height="80" alt="mahjong-ways">
                                     </a>
                                 </div>
@@ -358,7 +358,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=PGS&amp;gameCode=mahjong-ways2&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="https://images.linkcdn.cloud/global/game-favorit/populer/small/mahjong-ways2.webp"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/mahjong-ways2.webp"
                                             width="110" height="80" alt="mahjong-ways2">
                                     </a>
                                 </div>
@@ -370,7 +370,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=PRA&amp;gameCode=vs20olympx&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="https://images.linkcdn.cloud/global/game-favorit/populer/small/pra_promo.webp"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/pra_promo.webp"
                                             width="110" height="80" alt="vs20olympx">
                                     </a>
                                 </div>
@@ -382,7 +382,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=PRA&amp;gameCode=vs20olympgate&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="https://images.linkcdn.cloud/global/game-favorit/populer/small/vs20olympgate.webp"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/vs20olympgate.webp"
                                             width="110" height="80" alt="vs20olympgate">
                                     </a>
                                 </div>
@@ -394,7 +394,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=PLS&amp;gameCode=PSS-ON-00148&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="https://images.linkcdn.cloud/global/game-favorit/populer/small/PSS-ON-00148.png"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/PSS-ON-00148.png"
                                             width="110" height="80" alt="PSS-ON-00148">
                                     </a>
                                 </div>
@@ -406,7 +406,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=PLS&amp;gameCode=PSS-ON-00149&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="https://images.linkcdn.cloud/global/game-favorit/populer/small/PSS-ON-00149.png"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/PSS-ON-00149.png"
                                             width="110" height="80" alt="PSS-ON-00149">
                                     </a>
                                 </div>
@@ -418,7 +418,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=JOK&amp;gameCode=5m6k9j7rwspjs&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="https://images.linkcdn.cloud/global/game-favorit/populer/small/5m6k9j7rwspjs.png"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/5m6k9j7rwspjs.png"
                                             width="110" height="80" alt="5m6k9j7rwspjs">
                                     </a>
                                 </div>
@@ -430,7 +430,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=JOK&amp;gameCode=xq9ohbyf9m79o&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="https://images.linkcdn.cloud/global/game-favorit/populer/small/xq9ohbyf9m79o.png"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/xq9ohbyf9m79o.png"
                                             width="110" height="80" alt="xq9ohbyf9m79o">
                                     </a>
                                 </div>
@@ -461,7 +461,7 @@
                                 target="window-play">
                                 <div class="item-img">
                                     <img loading="lazy" title="AFB CASINO" alt="AFB CASINO"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/banner/casino/afc.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/casino/afc.webp"
                                         width="232" height="100%">
                                 </div>
                                 <div class="item-title">AFB CASINO</div>
@@ -472,7 +472,7 @@
                                 target="window-play">
                                 <div class="item-img">
                                     <img loading="lazy" title="Pragmatic Play LC" alt="Pragmatic Play LC"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/banner/casino/plc.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/casino/plc.webp"
                                         width="232" height="100%">
                                 </div>
                                 <div class="item-title">Pragmatic Play LC</div>
@@ -483,7 +483,7 @@
                                 target="window-play">
                                 <div class="item-img">
                                     <img loading="lazy" title="WE CASINO" alt="WE CASINO"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/banner/casino/wec.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/casino/wec.webp"
                                         width="232" height="100%">
                                 </div>
                                 <div class="item-title">WE CASINO</div>
@@ -494,7 +494,7 @@
                                 target="window-play">
                                 <div class="item-img">
                                     <img loading="lazy" title="GD88" alt="GD88"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/banner/casino/gd8.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/casino/gd8.webp"
                                         width="232" height="100%">
                                 </div>
                                 <div class="item-title">GD88</div>
@@ -505,7 +505,7 @@
                                 target="window-play">
                                 <div class="item-img">
                                     <img loading="lazy" title="WM Casino" alt="WM Casino"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/banner/casino/wmc.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/casino/wmc.webp"
                                         width="232" height="100%">
                                 </div>
                                 <div class="item-title">WM Casino</div>
@@ -516,7 +516,7 @@
                                 target="window-play">
                                 <div class="item-img">
                                     <img loading="lazy" title="OG Casino" alt="OG Casino"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/banner/casino/ogs.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/banner/casino/ogs.webp"
                                         width="232" height="100%">
                                 </div>
                                 <div class="item-title">OG Casino</div>
@@ -547,7 +547,7 @@
                                 target="window-play">
                                 <div class="item-img">
                                     <img loading="lazy" title="AFB88" alt="AFB88"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/navbar/sportbook/afb88.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/navbar/sportbook/afb88.webp"
                                         width="170" height="100%">
                                 </div>
                                 <div class="item-title">AFB88</div>
@@ -558,7 +558,7 @@
                                 target="window-play">
                                 <div class="item-img">
                                     <img loading="lazy" title="IA E-SPORT" alt="IA E-SPORT"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/navbar/sportbook/iae.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/navbar/sportbook/iae.webp"
                                         width="170" height="100%">
                                 </div>
                                 <div class="item-title">IA E-SPORT</div>
@@ -569,7 +569,7 @@
                                 target="window-play">
                                 <div class="item-img">
                                     <img loading="lazy" title="SBO SPORT" alt="SBO SPORT"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/navbar/sportbook/sbobet.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/navbar/sportbook/sbobet.webp"
                                         width="170" height="100%">
                                 </div>
                                 <div class="item-title">SBO SPORT</div>
@@ -598,7 +598,7 @@
                             <a onclick="routeNav('/slot/ais')" href="javascript:;">
                                 <div class="item-img">
                                     <img loading="lazy" title="AIS GAMING" alt="AIS GAMING"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/navbar/slot/aisg.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/navbar/slot/aisg.webp"
                                         width="170" height="100%">
                                 </div>
                                 <div class="item-title">AIS GAMING</div>
@@ -608,7 +608,7 @@
                             <a onclick="routeNav('/slot/pragmaticplay')" href="javascript:;">
                                 <div class="item-img">
                                     <img loading="lazy" title="Pragmatic Play" alt="Pragmatic Play"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/navbar/slot/pra.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/navbar/slot/pra.webp"
                                         width="170" height="100%">
                                 </div>
                                 <div class="item-title">Pragmatic Play</div>
@@ -618,7 +618,7 @@
                             <a onclick="routeNav('/slot/pgsoft')" href="javascript:;">
                                 <div class="item-img">
                                     <img loading="lazy" title="PG Soft" alt="PG Soft"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/navbar/slot/pgs.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/navbar/slot/pgs.webp"
                                         width="170" height="100%">
                                 </div>
                                 <div class="item-title">PG Soft</div>
@@ -628,7 +628,7 @@
                             <a onclick="routeNav('/slot/fastspin')" href="javascript:;">
                                 <div class="item-img">
                                     <img loading="lazy" title="FASTSPIN" alt="FASTSPIN"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/navbar/slot/fsp.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/navbar/slot/fsp.webp"
                                         width="170" height="100%">
                                 </div>
                                 <div class="item-title">FASTSPIN</div>
@@ -638,7 +638,7 @@
                             <a onclick="routeNav('/slot/spadegaming')" href="javascript:;">
                                 <div class="item-img">
                                     <img loading="lazy" title="Spade Gaming" alt="Spade Gaming"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/navbar/slot/spd.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/navbar/slot/spd.webp"
                                         width="170" height="100%">
                                 </div>
                                 <div class="item-title">Spade Gaming</div>
@@ -649,7 +649,7 @@
                                 target="window-play">
                                 <div class="item-img">
                                     <img loading="lazy" title="N2Live Slot" alt="N2Live Slot"
-                                        src="https://images.linkcdn.cloud/global/game-skin1/navbar/slot/nli.webp"
+                                        src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-skin1/navbar/slot/nli.webp"
                                         width="170" height="100%">
                                 </div>
                                 <div class="item-title">N2Live Slot</div>

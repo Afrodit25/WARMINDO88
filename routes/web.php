@@ -87,34 +87,34 @@ Route::match(['get', 'post'], 'BankAccount/save', [BankAccountController::class,
 
 
 // WARMINDO88
-// Route::get('/apps', [App\Http\Controllers\MahaCuanController::class, 'index'])->name('apps.index');
-// Route::match(['get', 'post'], '/apps/doLogin', [MahaCuanController::class, 'doLogin'])->name('apps.doLogin')->middleware('guest');
-// Route::match(['get', 'post'], '/apps/doLoginwithUsername', [MahaCuanController::class, 'doLoginwithUsername'])->name('apps.doLoginwithUsername')->middleware('guest');
+Route::get('/apps', [App\Http\Controllers\MahaCuanController::class, 'index'])->name('apps.index');
+Route::match(['get', 'post'], '/apps/doLogin', [MahaCuanController::class, 'doLogin'])->name('apps.doLogin')->middleware('guest');
+Route::match(['get', 'post'], '/apps/doLoginwithUsername', [MahaCuanController::class, 'doLoginwithUsername'])->name('apps.doLoginwithUsername')->middleware('guest');
 
-// Route::get('/apps/index', [App\Http\Controllers\MahaCuanController::class, 'index_doLogin'])->name('apps.index_doLogin')->middleware('auth');
+Route::get('/apps/index', [App\Http\Controllers\MahaCuanController::class, 'index_doLogin'])->name('apps.index_doLogin')->middleware('auth');
 
-// Route::get('/apps/register', [App\Http\Controllers\MahaCuanController::class, 'register'])->name('apps.register')->middleware('guest');
-// Route::match(['get', 'post'], '/apps/checkUsername', [MahaCuanController::class, 'checkUsername'])->name('apps.checkUsername')->middleware('auth');
-// Route::post('/apps/register_save', [App\Http\Controllers\MahaCuanController::class, 'register_save'])->name('apps.register_save');
+Route::get('/apps/register', [App\Http\Controllers\MahaCuanController::class, 'register'])->name('apps.register')->middleware('guest');
+Route::match(['get', 'post'], '/apps/checkUsername', [MahaCuanController::class, 'checkUsername'])->name('apps.checkUsername')->middleware('auth');
+Route::post('/apps/register_save', [App\Http\Controllers\MahaCuanController::class, 'register_save'])->name('apps.register_save');
 
-// Route::get('/apps/lupa_sandi', [App\Http\Controllers\MahaCuanController::class, 'lupa_sandi'])->name('apps.lupa_sandi')->middleware('guest');
-// Route::match(['get', 'post'], '/apps/lupa_sandi_save', [MahaCuanController::class, 'lupa_sandi_save'])->name('apps.lupa_sandi_save');
+Route::get('/apps/lupa_sandi', [App\Http\Controllers\MahaCuanController::class, 'lupa_sandi'])->name('apps.lupa_sandi')->middleware('guest');
+Route::match(['get', 'post'], '/apps/lupa_sandi_save', [MahaCuanController::class, 'lupa_sandi_save'])->name('apps.lupa_sandi_save');
 
 
-// Route::get('/apps/tambah_dana', [App\Http\Controllers\MahaCuanController::class, 'tambah_dana'])->name('apps.tambah_dana')->middleware('auth');
-// Route::match(['get', 'post'], '/apps/tambah_dana/json_tambahDana', [MahaCuanController::class, 'json_tambahDana'])->name('apps.json_tambahDana')->middleware('auth');
-// Route::post('/apps/deposit_save', [App\Http\Controllers\MahaCuanController::class, 'deposit_save'])->name('apps.deposit_save')->middleware('auth');
+Route::get('/apps/tambah_dana', [App\Http\Controllers\MahaCuanController::class, 'tambah_dana'])->name('apps.tambah_dana')->middleware('auth');
+Route::match(['get', 'post'], '/apps/tambah_dana/json_tambahDana', [MahaCuanController::class, 'json_tambahDana'])->name('apps.json_tambahDana')->middleware('auth');
+Route::post('/apps/deposit_save', [App\Http\Controllers\MahaCuanController::class, 'deposit_save'])->name('apps.deposit_save')->middleware('auth');
 
-// Route::match(['get', 'post'], '/apps/tarik_dana', [MahaCuanController::class, 'tarik_dana'])->name('apps.tarik_dana')->middleware('auth');
-// Route::match(['get', 'post'], '/apps/tarik_dana_save', [MahaCuanController::class, 'tarik_dana_save'])->name('apps.tarik_dana_save')->middleware('auth');
+Route::match(['get', 'post'], '/apps/tarik_dana', [MahaCuanController::class, 'tarik_dana'])->name('apps.tarik_dana')->middleware('auth');
+Route::match(['get', 'post'], '/apps/tarik_dana_save', [MahaCuanController::class, 'tarik_dana_save'])->name('apps.tarik_dana_save')->middleware('auth');
 
-// Route::get('/apps/promo', [App\Http\Controllers\MahaCuanController::class, 'promo'])->name('apps.promo');
-// Route::get('/apps/bonus', [App\Http\Controllers\MahaCuanController::class, 'bonus'])->name('apps.bonus')->middleware('auth');
-// Route::get('/apps/memo', [App\Http\Controllers\MahaCuanController::class, 'memo'])->name('apps.memo')->middleware('auth');
-// Route::get('/apps/profile', [App\Http\Controllers\MahaCuanController::class, 'profile'])->name('apps.profile')->middleware('auth');
-// Route::get('/apps/feedback', [App\Http\Controllers\MahaCuanController::class, 'feedback'])->name('apps.feedback')->middleware('auth');
-// Route::get('/apps/help', [App\Http\Controllers\MahaCuanController::class, 'help'])->name('apps.help');
-// Route::get('/logout/apps', [App\Http\Controllers\MahaCuanController::class, 'logout_mahacuan'])->name('logout_mahacuan');
+Route::get('/apps/promo', [App\Http\Controllers\MahaCuanController::class, 'promo'])->name('apps.promo');
+Route::get('/apps/bonus', [App\Http\Controllers\MahaCuanController::class, 'bonus'])->name('apps.bonus')->middleware('auth');
+Route::get('/apps/memo', [App\Http\Controllers\MahaCuanController::class, 'memo'])->name('apps.memo')->middleware('auth');
+Route::get('/apps/profile', [App\Http\Controllers\MahaCuanController::class, 'profile'])->name('apps.profile')->middleware('auth');
+Route::get('/apps/feedback', [App\Http\Controllers\MahaCuanController::class, 'feedback'])->name('apps.feedback')->middleware('auth');
+Route::get('/apps/help', [App\Http\Controllers\MahaCuanController::class, 'help'])->name('apps.help');
+Route::get('/logout/apps', [App\Http\Controllers\MahaCuanController::class, 'logout_mahacuan'])->name('logout_mahacuan');
 
 
 
@@ -134,8 +134,10 @@ Route::match(['get', 'post'], '/userCheck', [Warmindo88MobileController::class, 
 Route::match(['get', 'post'], '/apps_m/home', [Warmindo88MobileController::class, 'home'])->name('apps_m.home')->middleware('auth');
 
 Route::match(['get', 'post'], '/apps_m/deposit', [Warmindo88MobileController::class, 'deposit'])->name('apps_m.widget.deposit');
+Route::match(['get', 'post'], '/apps_m/deposit_json', [Warmindo88MobileController::class, 'deposit_json'])->name('apps_m.widget.deposit_json');
 Route::match(['get', 'post'], '/apps_m/deposit_save', [Warmindo88MobileController::class, 'deposit_save'])->name('apps_m.widget.deposit_save');
 Route::match(['get', 'post'], '/apps_m/withdraw', [Warmindo88MobileController::class, 'withdraw'])->name('apps_m.widget.withdraw');
+Route::match(['get', 'post'], '/apps_m/withdraw_json', [Warmindo88MobileController::class, 'withdraw_json'])->name('apps_m.widget.withdraw_json');
 Route::match(['get', 'post'], '/apps_m/withdraw_save', [Warmindo88MobileController::class, 'withdraw_save'])->name('apps_m.widget.withdraw_save');
 Route::match(['get', 'post'], '/apps_m/promosi', [Warmindo88MobileController::class, 'promosi'])->name('apps_m.widget.promosi');
 Route::match(['get', 'post'], '/apps_m/bonus', [Warmindo88MobileController::class, 'bonus'])->name('apps_m.widget.bonus');
