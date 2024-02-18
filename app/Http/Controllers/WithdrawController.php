@@ -51,12 +51,6 @@ class WithdrawController extends Controller
                     }
                     else {
                         return '
-                        <div class="dropdown dropdown-action">
-                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#update_status' . $row->id . '"><i class="fa fa-pencil-square-o m-r-5"></i> Update Status</a>
-                                </div>
-                        </div>
                         ';
                     }
                 })
@@ -109,7 +103,7 @@ class WithdrawController extends Controller
 
             // Update Saldo Member
             $dataMember = [
-                'saldo_deposit'        => $saldo_member - $request->saldo_sebelumnya,
+                'saldo_deposit'        => $saldo_member - $request->nominal_withdraw,
             ];
             Member::find($member->id)->update($dataMember);
 

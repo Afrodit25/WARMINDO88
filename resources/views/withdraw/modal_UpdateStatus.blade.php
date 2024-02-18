@@ -9,19 +9,19 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('Deposit.UpdateStatus', $val->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('Withdraw.UpdateStatus', $val->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="row">
-                        <input type="hidden" name="saldo_sebelumnya" value="{{ $val->nominal_withdraw }}">
+                        <input type="text" name="nominal_withdraw" value="{{ $val->nominal_withdraw }}">
                         {{-- <input type="hidden" name="deposit_id" value="{{ $val->id }}"> --}}
                         <input type="hidden" name="member_id" value="{{ $val->member_id }}">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Status Deposit</label>
-                                <select class="select" name="status_deposit" required>
-                                    <option value="" @selected(old('PENDING', $val->status_deposit) == 'PENDING')>PENDING</option>
-                                    <option value="SUCCESS" @selected(old('SUCCESS', $val->status_deposit) == 'SUCCESS')>SUCCESS</option>
+                                <select class="select" name="status_withdraw" required>
+                                    <option value="" @selected(old('PENDING', $val->status_withdraw) == 'PENDING')>PENDING</option>
+                                    <option value="SUCCESS" @selected(old('SUCCESS', $val->status_withdraw) == 'SUCCESS')>SUCCESS</option>
                                 </select>
                             </div>
                         </div>

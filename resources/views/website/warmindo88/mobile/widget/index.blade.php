@@ -394,7 +394,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=PLS&amp;gameCode=PSS-ON-00148&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/PSS-ON-00148.png"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/PSS-ON-00148.webp"
                                             width="110" height="80" alt="PSS-ON-00148">
                                     </a>
                                 </div>
@@ -406,7 +406,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=PLS&amp;gameCode=PSS-ON-00149&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/PSS-ON-00149.png"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/PSS-ON-00149.webp"
                                             width="110" height="80" alt="PSS-ON-00149">
                                     </a>
                                 </div>
@@ -418,7 +418,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=JOK&amp;gameCode=5m6k9j7rwspjs&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/5m6k9j7rwspjs.png"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/5m6k9j7rwspjs.webp"
                                             width="110" height="80" alt="5m6k9j7rwspjs">
                                     </a>
                                 </div>
@@ -430,7 +430,7 @@
                                         href="https://mahacuan.support/gameIframe?providerCode=JOK&amp;gameCode=xq9ohbyf9m79o&amp;isTrial=0"
                                         target="window-play">
                                         <img loading="lazy"
-                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/xq9ohbyf9m79o.png"
+                                            src="{{ asset('/') }}template_mahacuan/images.linkcdn.cloud/global/game-favorit/populer/small/xq9ohbyf9m79o.webp"
                                             width="110" height="80" alt="xq9ohbyf9m79o">
                                     </a>
                                 </div>

@@ -670,7 +670,7 @@
             <div class="form-button">
                 <button class="btn-login sidenav-login" type="button" type="button" data-toggle="modal"
                     data-target="#loginModal">Masuk</button>
-                <button class="btn-register" onclick="window.location.href = 'register.html'">Daftar</button>
+                <button class="btn-register" onclick="window.location.href = '{{ route('apps_m.daftar') }}'">Daftar</button>
             </div>
             <div class="form-forgot">
                 <a class="" href="forgot-password.html">Lupa Password?</a>
@@ -2675,7 +2675,7 @@
                             </div>
                             <div class="form-button">
                                 <button name="buttonLogin" type="submit" class="button-login">Masuk</button>
-                                <span>Belum punya akun? <a href="register.html">Daftar</a></span>
+                                <span>Belum punya akun? <a href="{{ route('apps_m.daftar') }}">Daftar</a></span>
                             </div>
                         </form>
                     </div>

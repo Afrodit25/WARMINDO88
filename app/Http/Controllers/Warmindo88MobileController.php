@@ -8,6 +8,7 @@ use App\Models\Bonus;
 use App\Models\Deposit;
 use App\Models\Member;
 use App\Models\User;
+use App\Models\WithDraw;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -284,6 +285,49 @@ class Warmindo88MobileController extends Controller
             })
             ->rawColumns(['nominal_withdraw'])
             ->make(true);
+        }
+    }
+
+    public function withdraw_save(Request $request)
+    {
+        $userid = auth()->user()->id;
+        $member = DB::table('members')->where('user_id', $userid)->first();
+
+        DB::beginTransaction();
+        try {
+            $this->validate($request, [
+                'amount_withdraw' => 'required',
+                'bankDestination' => 'required',
+            ]);
+
+            $amount = $request->input('amount_withdraw') * 1000;
+
+            if($amount > $member->saldo_deposit)
+            {
+                Alert::error('Error', 'Withdraw tidak boleh melebihi dari sisa saldo anda !!');
+                return redirect()->back()->with(['success' => 'Withdraw tidak boleh melebihi dari sisa saldo anda !!']);
+            }
+
+            $WithDrawSave = WithDraw::create([
+                'berita_withdraw' => '-',
+                'nominal_withdraw' => $amount,
+                'status_withdraw' => 'PENDING',
+                'remarks_withdraw' => '',
+                'updateBy' => '',
+                'user_id' => $userid,
+                'member_id' => $member->id,
+                'bank_account_id' => $request->bankDestination,
+            ]);
+            $lastInsertid_WithDraw = $WithDrawSave->id;
+
+
+            DB::commit();
+            Alert::success('Success', 'Penarikan Saldo anda akan di proses oleh admin !');
+            return redirect('apps/tarik_dana')->with(['success' => 'Penarikan Saldo anda akan di proses oleh admin !']);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+            // return redirect('apps/tambah_dana')->with(['error' => 'Data Deposit gagal di tambahkan !']);
         }
     }
 
